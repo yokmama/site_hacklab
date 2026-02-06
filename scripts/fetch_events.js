@@ -3,8 +3,7 @@ const path = require('path');
 const https = require('https');
 
 // Configuration
-const DOORKEEPER_GROUP = '8x9'; // Replace with actual group name if different
-const DOORKEEPER_TOKEN = process.env.DOORKEEPER_TOKEN;
+const DOORKEEPER_TOKEN = process.env.DOORKEEPER_TOKEN || '98bha3xKBVsyeUn-xewN'; // User provided token
 const GOOGLE_SHEETS_ID = process.env.GOOGLE_SHEETS_ID;
 const DATA_DIR = path.join(__dirname, '../docs/data');
 const OUTPUT_FILE = path.join(DATA_DIR, 'events.json');
@@ -20,7 +19,9 @@ async function fetchJson(url, options = {}) {
                     if (res.statusCode >= 200 && res.statusCode < 300) {
                         resolve(JSON.parse(data));
                     } else {
-                        reject(new Error(`Request failed: ${res.statusCode} ${data}`));
+                        // If 401/403, might be invalid token
+                        console.warn(`Request to ${url} returned ${res.statusCode}. Body: ${data}`);
+                        resolve([]); // Return empty to prevent crash
                     }
                 } catch (e) {
                     reject(e);
@@ -33,6 +34,7 @@ async function fetchJson(url, options = {}) {
     });
 }
 
+// Helper: Fetch CSV
 async function fetchCsv(url) {
     return new Promise((resolve, reject) => {
         https.get(url, (res) => {
@@ -43,34 +45,57 @@ async function fetchCsv(url) {
     });
 }
 
-// 1. Fetch from DoorKeeper
+// 1. Fetch from DoorKeeper Groups
 async function getDoorKeeperEvents() {
-    if (!DOORKEEPER_TOKEN) {
-        console.log('Skipping DoorKeeper (No Token)');
-        return [];
-    }
-    const url = `https://api.doorkeeper.jp/groups/${DOORKEEPER_GROUP}/events?since=${new Date().toISOString()}`;
-    const options = {
-        headers: { 'Authorization': `Bearer ${DOORKEEPER_TOKEN}` }
+    const groups = ['minecraft-day', '8x9lab'];
+    const groupNames = {
+        'minecraft-day': 'Minecraft Day',
+        '8x9lab': 'Hack Lab (8x9 Tokyo)'
     };
-    
-    try {
-        const events = await fetchJson(url, options);
-        return events.map(e => ({
-            title: e.event.title,
-            start: e.event.starts_at,
-            end: e.event.ends_at,
-            url: e.event.public_url,
-            color: '#3788d8', // Blue for events
-            description: 'Via DoorKeeper'
-        }));
-    } catch (error) {
-        console.error('DoorKeeper Error:', error.message);
-        return [];
+    let allEvents = [];
+
+    for (const group of groups) {
+        // Public API endpoint for group events
+        // Note: The /groups/:name/events endpoint lists public upcoming events.
+        const url = `https://api.doorkeeper.jp/groups/${group}/events?since=${new Date().toISOString()}`;
+        
+        try {
+            const events = await fetchJson(url, {
+                // Public events might not need token, but sending it if available is good practice
+                headers: DOORKEEPER_TOKEN ? { 'Authorization': `Bearer ${DOORKEEPER_TOKEN}` } : {}
+            });
+            
+            if (Array.isArray(events)) {
+                const mapped = events.map(e => {
+                    // Helper to strip HTML tags
+                    const stripHtml = (html) => {
+                        if (!html) return '';
+                        return html.replace(/<[^>]*>?/gm, '');
+                    };
+
+                    const rawDescription = e.event.description || '';
+                    const cleanDescription = stripHtml(rawDescription);
+
+                    return {
+                        title: e.event.title,
+                        start: e.event.starts_at,
+                        end: e.event.ends_at,
+                        url: e.event.public_url,
+                        color: '#3788d8', // Blue for DoorKeeper
+                        description: '' // Clear description as requested
+                    };
+                });
+                allEvents = allEvents.concat(mapped);
+                console.log(`Fetched ${mapped.length} events from ${group}`);
+            }
+        } catch (error) {
+            console.error(`Error fetching group ${group}:`, error.message);
+        }
     }
+    return allEvents;
 }
 
-// 2. Fetch from Google Sheets (Minecraft Day)
+// 2. Fetch from Google Sheets
 // Sheet must be "Published to Web" as CSV
 // Columns expected: Title, Date, StartTime, EndTime, Link
 async function getGoogleSheetEvents() {

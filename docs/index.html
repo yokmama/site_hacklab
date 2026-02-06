@@ -22,6 +22,7 @@
                     <li><a href="#curriculum">カリキュラム</a></li>
                     <li><a href="#price">料金</a></li>
                     <li><a href="#schedule">スケジュール</a></li>
+                    <li><a href="#faq">Q&A</a></li>
                     <li><a href="#contact" class="header-cta">体験レッスン</a></li>
                 </ul>
             </nav>
@@ -38,10 +39,19 @@
                 </video>
             </div>
             <div class="container hero-content">
-                <div class="school-badge">キッズプログラミングスクール8x9 東京校</div>
-                <h1>未来を創る力を、<br>プログラミングで手に入れよう。</h1>
-                <p>「技術」を学ぶだけじゃない。<br>それを「何に使うか」を学ぶ、プロフェッショナルのための第一歩。</p>
-                <a href="#contact" class="btn btn-primary">無料体験レッスンに申込む</a>
+            <div class="container hero-content">
+                <!-- Video Wrapper for Overlay -->
+                <div style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 20px;">
+                    <video autoplay muted loop playsinline src="images/0206.mov" style="width: 100%; height: auto; display: block;"></video>
+                    
+                    <!-- Text Overlay (Bottom 1/3 approx) -->
+                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(0, 0, 0, 0.5); padding: 30px 20px; color: white; text-align: center; backdrop-filter: blur(2px);">
+                        <h1 style="margin: 0 0 10px 0; font-size: 2.2rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">未来を創る力を、<br>プログラミングで手に入れよう。</h1>
+                        <p style="color: #f0f0f0; margin: 0; font-weight: 500;">「技術」を学ぶだけじゃない。<br>それを「何に使うか」を学ぶ、プロフェッショナルのための第一歩。</p>
+                    </div>
+                </div>
+                
+                <a href="#contact" class="btn btn-primary" style="margin-top: 10px;">無料体験レッスンに申込む</a>
             </div>
         </section>
 
@@ -65,19 +75,12 @@
             </div>
         </section>
 
+
         <!-- Curriculum Section -->
         <section id="curriculum">
             <div class="container">
                 <h2>独自のカリキュラムとシステム</h2>
-                
-                <!-- Entry Requirements / Foundational Skills -->
-                <div style="background: #eefcf1; padding: 25px; border-radius: 12px; margin-bottom: 40px; text-align: center;">
-                    <h3 style="margin-bottom: 15px; color: var(--color-text-main);">小学1年生から入学可能</h3>
-                    <p>
-                        最初はタイピングやパソコンの基本操作、インターネットリテラシーから丁寧に学びます。<br>
-                        「プログラミング」や「モノづくり」への興味を自然に引き出し、楽しみながら基礎を固めていきます。
-                    </p>
-                </div>
+
 
                 <div class="features-grid">
                     <div class="feature-card">
@@ -94,8 +97,10 @@
                         <h3>成長記録システム</h3>
                         <p>子供たちの学習進捗や作った作品、成長の軌跡を記録・可視化する独自のシステム。<br>
                         一人ひとりの成長をしっかりと記録し、確実なスキルアップをサポートします。</p>
-                    </div>
+    
                 </div>
+
+
             </div>
         </section>
 
@@ -117,11 +122,7 @@
                         </div>
                     </div>
                     
-                    <div style="background-color: #fffae6; padding: 20px; border-radius: 8px; border-left: 5px solid var(--color-accent);">
-                        <h3 style="color: #d4a017; margin-bottom: 10px;">✨ 生徒限定特典</h3>
-                        <p style="font-weight: bold; font-size: 1.1rem; margin-bottom: 5px;">スクールイベント参加費 無料</p>
-                        <p style="font-size: 0.95rem;">毎月2回以上開催されるワークショップやイベント（通常参加費 1,000円〜）に、生徒さんは<span style="color: red; font-weight: bold;">無料</span>でご参加いただけます。</p>
-                    </div>
+
                 </div>
             </div>
         </section>
@@ -136,6 +137,93 @@
                 <div style="margin-top: 20px; text-align: left; max-width: 900px; margin-left: auto; margin-right: auto; font-size: 0.9em;">
                     <p><strong><span style="color: #6DCB2A;">●</span> 体験レッスン:</strong> 毎週土曜日 9:00-10:00 / 12:00-13:00 (予約不要、当日参加可)</p>
                     <p><strong><span style="color: #3788d8;">●</span> イベント:</strong> 不定期開催 (詳細はクリックして確認)</p>
+                    <p><strong><span style="color: #2D6A4F;">●</span> 生徒限定特典:</strong> スクールイベント参加費 無料（通常参加費 1,000円〜）<br></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" style="background-color: #fafafa;">
+            <div class="container">
+                <h2>よくある質問 (Q&A)</h2>
+                <div class="faq-list">
+                    <!-- Q1 (Migrated) -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="faq-icon">Q</span>
+                            <h3>入学は何歳から可能ですか？</h3>
+                        </div>
+                        <div class="faq-answer">
+                            <span class="faq-icon-a">A</span>
+                            <p>小学1年生から入学可能です。<br>
+                            最初はタイピングやパソコンの基本操作、インターネットリテラシーから丁寧に学びます。「プログラミング」や「モノづくり」への興味を自然に引き出し、楽しみながら基礎を固めていきます。</p>
+                        </div>
+                    </div>
+
+                    <!-- Q2 (Migrated) -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="faq-icon">Q</span>
+                            <h3>基礎を習得した後はどのようなカリキュラムになりますか？</h3>
+                        </div>
+                        <div class="faq-answer">
+                            <span class="faq-icon-a">A</span>
+                            <p>基礎を学んだ後は、「子供のやりたいこと」を最重視したオンライン・マンツーマン授業へとステップアップします。<br>
+                            現役エンジニアなどのメンターが個別にフォローし、実際の作品作りを通して高度なIT技術を実践的に学んでいきます。</p>
+                        </div>
+                    </div>
+
+                    <!-- Q3 (From 8x9.jp) -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="faq-icon">Q</span>
+                            <h3>パソコン初心者でも大丈夫ですか？</h3>
+                        </div>
+                        <div class="faq-answer">
+                            <span class="faq-icon-a">A</span>
+                            <p>はい、全く問題ありません。<br>
+                            マウスの持ち方やキーボード入力から指導しますので、パソコンに触ったことがないお子様でも安心してスタートできます。</p>
+                        </div>
+                    </div>
+
+                    <!-- Q4 (From 8x9.jp) -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="faq-icon">Q</span>
+                            <h3>パソコンの持ち込みは必要ですか？</h3>
+                        </div>
+                        <div class="faq-answer">
+                            <span class="faq-icon-a">A</span>
+                            <p>東京校では、原則としてご自身のノートパソコンのお持ち込みをお願いしております。<br>
+                            高スペックなPCは必要ありません（2万円台の中古PC等でも十分学習可能な教材を使用しています）。<br>
+                            安価なPCの購入サポートも行っておりますので、お気軽にご相談ください。</p>
+                        </div>
+                    </div>
+
+                    <!-- Q5 (From 8x9.jp) -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="faq-icon">Q</span>
+                            <h3>欠席した場合の振替はありますか？</h3>
+                        </div>
+                        <div class="faq-answer">
+                            <span class="faq-icon-a">A</span>
+                            <p>レッスン予約日の前日23時59分までにご連絡頂いた場合には、受講できなかったレッスンを翌月まで繰り越すことができます。（2ヵ月以上繰り越すことはできません）</p>
+                        </div>
+                    </div>
+
+                    <!-- Q6 (From 8x9.jp) -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="faq-icon">Q</span>
+                            <h3>保護者にパソコンの知識は必要ですか？</h3>
+                        </div>
+                        <div class="faq-answer">
+                            <span class="faq-icon-a">A</span>
+                            <p>ご家族の方も一緒に知識を付けられた方がお子さまの学びに対して深い理解が得られますが、無理に覚えて頂く必要はありません。<br>
+                            講師ができる限り分かりやすい言葉で説明し、サポートいたします。</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -157,9 +245,16 @@
                 <div class="embed-container">
                     <!-- Google Form Embed Placeholder -->
                     <!-- ユーザー様へ: ここにGoogleフォームの埋め込みコード(iframe)を貼り付けてください -->
-                    <div class="iframe-placeholder">
-                        <p>Google Form will appear here.<br>（Googleフォームを埋め込んでください）</p>
-                    </div>
+                    <iframe 
+                        id="google-form-frame"
+                        src="https://docs.google.com/forms/d/e/1FAIpQLSc3YmdS1dzUzilBTQarXmwGIP4ZmBIi7zlB0Q99yBTDQERBOA/viewform?embedded=true" 
+                        width="100%" 
+                        height="800" 
+                        frameborder="0" 
+                        marginheight="0" 
+                        marginwidth="0"
+                        style="background: white; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);"
+                    >読み込んでいます…</iframe>
                 </div>
             </div>
         </section>
@@ -173,6 +268,9 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/themes/light.css" />
     <script src="js/script.js"></script>
     <script src="js/calendar.js"></script>
 </body>
