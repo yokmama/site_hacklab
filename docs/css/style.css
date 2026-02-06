@@ -135,49 +135,38 @@ header nav a {
 
 /* Hero Section */
 .hero {
-  position: relative;
-  /* background: linear-gradient(135deg, #eefcf1 0%, #ffffff 100%); Removed in favor of video/overlay */
-  padding: 80px 0;
+  padding: 80px 0 20px;
   text-align: center;
-  overflow: hidden; /* Ensure video doesn't spill out */
-  min-height: 600px; /* Ensure height for video */
-  display: flex;
-  align-items: center;
 }
 
-.video-background {
-  position: absolute;
-  top: 0;
-  left: 0;
+.hero-video-wrapper {
   width: 100%;
-  height: 100%;
-  z-index: 1; /* Behind content */
   overflow: hidden;
 }
 
-.video-background video {
+.hero-video-wrapper video {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.3; /* Fade video slightly so text is readable */
+  height: auto;
+  display: block;
 }
 
-/* Optional overlay if video is too bright */
-.video-background::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.7); /* White overlay */
-  z-index: 2;
+.hero-text {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 30px 20px;
+  text-align: center;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 3; /* Above video and overlay */
-  width: 100%;
+.hero-text h1 {
+  margin: 0 0 10px 0;
+  font-size: 2.2rem;
+  color: var(--color-text);
+}
+
+.hero-text p {
+  color: var(--color-text-light);
+  margin: 0 0 20px;
+  font-weight: 500;
 }
 
 .hero h1 {

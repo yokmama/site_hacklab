@@ -32,26 +32,17 @@
     <main>
         <!-- Hero Section -->
         <section class="hero">
-            <div class="video-background">
-                <video autoplay muted loop playsinline poster="images/hero-poster.jpg" id="hero-video">
-                    <source src="images/hero_video_bg.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
+            <!-- Full-width video -->
+            <div class="hero-video-wrapper">
+                <video autoplay muted loop playsinline poster="images/hero-poster.jpg" preload="metadata">
+                    <source src="images/hero.webm" type="video/webm">
+                    <source src="images/hero.mp4" type="video/mp4">
                 </video>
             </div>
-            <div class="container hero-content">
-            <div class="container hero-content">
-                <!-- Video Wrapper for Overlay -->
-                <div style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 20px;">
-                    <video autoplay muted loop playsinline src="images/0206.mov" style="width: 100%; height: auto; display: block;"></video>
-                    
-                    <!-- Text Overlay (Bottom 1/3 approx) -->
-                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(0, 0, 0, 0.5); padding: 30px 20px; color: white; text-align: center; backdrop-filter: blur(2px);">
-                        <h1 style="margin: 0 0 10px 0; font-size: 2.2rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">未来を創る力を、<br>プログラミングで手に入れよう。</h1>
-                        <p style="color: #f0f0f0; margin: 0; font-weight: 500;">「技術」を学ぶだけじゃない。<br>それを「何に使うか」を学ぶ、プロフェッショナルのための第一歩。</p>
-                    </div>
-                </div>
-                
-                <a href="#contact" class="btn btn-primary" style="margin-top: 10px;">無料体験レッスンに申込む</a>
+            <div class="hero-text">
+                <h1>未来を創る力を、<br>プログラミングで手に入れよう。</h1>
+                <p>「技術」を学ぶだけじゃない。<br>それを「何に使うか」を学ぶ、プロフェッショナルのための第一歩。</p>
+                <a href="#contact" class="btn btn-primary">無料体験レッスンに申込む</a>
             </div>
         </section>
 
