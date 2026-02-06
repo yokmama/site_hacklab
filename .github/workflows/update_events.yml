@@ -1,0 +1,34 @@
+name: Update School Events
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Run daily at midnight UTC
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  update-calendar:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Needed to push changes
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Fetch Data
+      env:
+        DOORKEEPER_TOKEN: ${{ secrets.DOORKEEPER_TOKEN }}
+        GOOGLE_SHEETS_ID: ${{ secrets.GOOGLE_SHEETS_ID }}
+      run: node scripts/fetch_events.js
+
+    - name: Commit and Push if changed
+      run: |
+        git config --global user.name 'GitHub Action'
+        git config --global user.email 'action@github.com'
+        git add docs/data/events.json
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update calendar events [skip ci]" && git push)
