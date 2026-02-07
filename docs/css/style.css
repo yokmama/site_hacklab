@@ -285,6 +285,40 @@ section h2::after {
   border: 2px dashed #aaa;
 }
 
+/* Access Section */
+.access-section {
+  background-color: var(--color-bg-light);
+}
+
+.access-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.access-info {
+  text-align: center;
+}
+
+.access-address {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.access-map {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.access-map iframe {
+  display: block;
+}
+
 /* Contact */
 .contact-section {
   background-color: #f4fbf2; /* Very light green tint */
