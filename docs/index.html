@@ -34,7 +34,7 @@
         <section class="hero">
             <!-- Full-width video -->
             <div class="hero-video-wrapper">
-                <video autoplay muted loop playsinline poster="images/hero-poster.jpg" preload="metadata">
+                <video id="hero-video" muted loop playsinline poster="images/hero-poster.jpg" preload="none">
                     <source src="images/hero.webm" type="video/webm">
                     <source src="images/hero.mp4" type="video/mp4">
                 </video>
@@ -284,5 +284,48 @@
     <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/themes/light.css" />
     <script src="js/script.js"></script>
     <script src="js/calendar.js"></script>
+    <script>
+    (function() {
+      var video = document.getElementById('hero-video');
+      if (!video) return;
+
+      // 低速回線の場合はポスター画像のみ表示して動画を読み込まない
+      var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+      if (conn) {
+        // saveData が有効、または effectiveType が遅い場合はスキップ
+        if (conn.saveData || (conn.effectiveType && conn.effectiveType === '2g')) {
+          video.style.opacity = '1';
+          return;
+        }
+      }
+
+      // 動画を読み込み開始
+      video.preload = 'auto';
+      video.load();
+
+      // 再生可能になったら再生してフェードイン
+      video.addEventListener('canplaythrough', function() {
+        video.play().then(function() {
+          video.classList.add('is-playing');
+        }).catch(function() {
+          // 自動再生がブロックされた場合はポスターを表示
+          video.style.opacity = '1';
+        });
+      }, { once: true });
+
+      // 5秒以内に読み込めなかった場合はポスターのまま表示
+      setTimeout(function() {
+        if (!video.classList.contains('is-playing')) {
+          video.style.opacity = '1';
+          // バックグラウンドで読み込みを継続
+          video.addEventListener('canplaythrough', function() {
+            video.play().then(function() {
+              video.classList.add('is-playing');
+            }).catch(function() {});
+          }, { once: true });
+        }
+      }, 5000);
+    })();
+    </script>
 </body>
 </html>

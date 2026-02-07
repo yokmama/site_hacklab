@@ -148,6 +148,12 @@ header nav a {
   width: 100%;
   height: auto;
   display: block;
+  opacity: 0;
+  transition: opacity 0.8s ease-in;
+}
+
+.hero-video-wrapper video.is-playing {
+  opacity: 1;
 }
 
 .hero-text {
