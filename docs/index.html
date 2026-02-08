@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
@@ -253,16 +255,24 @@
                 <h2>無料体験レッスンお申込み</h2>
                 <p>まずは実際にプログラミングの楽しさを体験してください。<br>以下のフォームよりお気軽にお申し込みいただけます。</p>
                 
+                <!-- Slot Picker: 体験レッスン日時選択UI -->
+                <div class="slot-picker-wrapper">
+                    <h3 class="slot-picker-heading">体験レッスンの日時を選択してください</h3>
+                    <div id="slot-picker" class="slot-picker-container"></div>
+                    <div id="slot-confirmation" class="slot-confirmation"></div>
+                    <p class="slot-guidance">上記以外の日程をご希望の場合は、フォーム内の備考欄にご記入ください。</p>
+                </div>
+
                 <div class="embed-container">
                     <!-- Google Form Embed Placeholder -->
                     <!-- ユーザー様へ: ここにGoogleフォームの埋め込みコード(iframe)を貼り付けてください -->
-                    <iframe 
+                    <iframe
                         id="google-form-frame"
-                        src="https://docs.google.com/forms/d/e/1FAIpQLSc3YmdS1dzUzilBTQarXmwGIP4ZmBIi7zlB0Q99yBTDQERBOA/viewform?embedded=true" 
-                        width="100%" 
-                        height="800" 
-                        frameborder="0" 
-                        marginheight="0" 
+                        src="https://docs.google.com/forms/d/e/1FAIpQLSc3YmdS1dzUzilBTQarXmwGIP4ZmBIi7zlB0Q99yBTDQERBOA/viewform?embedded=true"
+                        width="100%"
+                        height="1600"
+                        frameborder="0"
+                        marginheight="0"
                         marginwidth="0"
                         style="background: white; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);"
                     >読み込んでいます…</iframe>
@@ -273,6 +283,7 @@
 
     <footer>
         <div class="container">
+            <p style="margin-bottom: 10px;"><a href="https://www.instagram.com/xlabcustomer/" target="_blank" rel="noopener noreferrer" style="color: #ddd; font-size: 1.5rem;"><i class="fa-brands fa-instagram"></i> Instagram</a></p>
             <p>&copy; 2026 Kids Programming School 8x9 Tokyo. All Rights Reserved.</p>
             <p style="font-size: 0.8rem; margin-top: 10px;"><a href="https://8x9.jp/" target="_blank" style="text-decoration: underline; color: #aaa;">8x9 本家サイト（神戸・大阪）はこちら</a></p>
         </div>
