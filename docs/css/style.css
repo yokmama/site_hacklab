@@ -331,6 +331,70 @@ section h2::after {
   text-align: center;
 }
 
+/* Slot Picker */
+.slot-picker-wrapper {
+  max-width: 800px;
+  margin: 0 auto 20px;
+  text-align: center;
+}
+
+.slot-picker-heading {
+  font-size: 1.1rem;
+  color: var(--color-text-main);
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.slot-picker-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.slot-btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: var(--color-text-main);
+}
+
+.slot-btn:hover {
+  border-color: var(--color-primary);
+  background-color: #f0fbe8;
+}
+
+.slot-btn.slot-selected {
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.slot-confirmation {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  color: var(--color-primary);
+  font-weight: bold;
+  margin: 12px 0 0;
+  font-size: 0.95rem;
+  min-height: 1.5em;
+}
+
+.slot-confirmation.show {
+  opacity: 1;
+}
+
+.slot-guidance {
+  font-size: 0.85em;
+  color: var(--color-text-light);
+  margin-top: 10px;
+}
+
 /* Footer */
 footer {
   background-color: var(--color-bg-dark);
@@ -364,8 +428,23 @@ footer p {
   
   .logo-link {
     /* Keep it top-left but ensure it doesn't block too much content */
-    padding-right: 10px; 
+    padding-right: 10px;
     padding-bottom: 5px;
+  }
+
+  .slot-picker-container {
+    gap: 8px;
+  }
+
+  .slot-btn {
+    width: calc(50% - 4px);
+    min-height: 44px;
+    font-size: 0.85rem;
+    padding: 8px 10px;
+  }
+
+  .slot-guidance {
+    text-align: center;
   }
 }
 

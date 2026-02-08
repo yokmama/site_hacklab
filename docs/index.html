@@ -253,16 +253,24 @@
                 <h2>無料体験レッスンお申込み</h2>
                 <p>まずは実際にプログラミングの楽しさを体験してください。<br>以下のフォームよりお気軽にお申し込みいただけます。</p>
                 
+                <!-- Slot Picker: 体験レッスン日時選択UI -->
+                <div class="slot-picker-wrapper">
+                    <h3 class="slot-picker-heading">体験レッスンの日時を選択してください</h3>
+                    <div id="slot-picker" class="slot-picker-container"></div>
+                    <div id="slot-confirmation" class="slot-confirmation"></div>
+                    <p class="slot-guidance">上記以外の日程をご希望の場合は、フォーム内の備考欄にご記入ください。</p>
+                </div>
+
                 <div class="embed-container">
                     <!-- Google Form Embed Placeholder -->
                     <!-- ユーザー様へ: ここにGoogleフォームの埋め込みコード(iframe)を貼り付けてください -->
-                    <iframe 
+                    <iframe
                         id="google-form-frame"
-                        src="https://docs.google.com/forms/d/e/1FAIpQLSc3YmdS1dzUzilBTQarXmwGIP4ZmBIi7zlB0Q99yBTDQERBOA/viewform?embedded=true" 
-                        width="100%" 
-                        height="800" 
-                        frameborder="0" 
-                        marginheight="0" 
+                        src="https://docs.google.com/forms/d/e/1FAIpQLSc3YmdS1dzUzilBTQarXmwGIP4ZmBIi7zlB0Q99yBTDQERBOA/viewform?embedded=true"
+                        width="100%"
+                        height="1600"
+                        frameborder="0"
+                        marginheight="0"
                         marginwidth="0"
                         style="background: white; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);"
                     >読み込んでいます…</iframe>
