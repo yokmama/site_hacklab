@@ -257,8 +257,21 @@
                 
                 <!-- Slot Picker: 体験レッスン日時選択UI -->
                 <div class="slot-picker-wrapper">
-                    <h3 class="slot-picker-heading">体験レッスンの日時を選択してください</h3>
-                    <div id="slot-picker" class="slot-picker-container"></div>
+                    <h3 class="slot-picker-heading">体験レッスンの希望日時を選択してください</h3>
+                    <div class="slot-select-group">
+                        <div class="slot-select-item">
+                            <label for="slot-first" class="slot-select-label">第一希望</label>
+                            <select id="slot-first" class="slot-select">
+                                <option value="">-- 選択してください --</option>
+                            </select>
+                        </div>
+                        <div class="slot-select-item">
+                            <label for="slot-second" class="slot-select-label">第二希望</label>
+                            <select id="slot-second" class="slot-select">
+                                <option value="">-- 選択してください --</option>
+                            </select>
+                        </div>
+                    </div>
                     <div id="slot-confirmation" class="slot-confirmation"></div>
                     <p class="slot-guidance">上記以外の日程をご希望の場合は、フォーム内の備考欄にご記入ください。</p>
                 </div>

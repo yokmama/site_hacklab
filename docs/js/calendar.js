@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Use encodeURIComponent for safe URL insertion
             const safeText = encodeURIComponent(fillText);
             
-            buttonHtml = `<a href="#contact" onclick="updateContactForm('${safeText}')" class="btn-tooltip" style="display: inline-block; margin-top: 5px; padding: 4px 10px; background: #6DCB2A; color: white; text-decoration: none; border-radius: 4px; font-size: 0.8em;">申し込む</a>`;
+            buttonHtml = `<a href="#contact" onclick="selectSlotFromCalendar('${safeText}')" class="btn-tooltip" style="display: inline-block; margin-top: 5px; padding: 4px 10px; background: #6DCB2A; color: white; text-decoration: none; border-radius: 4px; font-size: 0.8em;">申し込む</a>`;
         } else if (info.event.url) {
             // For External Events: Open in new tab
             buttonHtml = `<a href="${info.event.url}" target="_blank" class="btn-tooltip" style="display: inline-block; margin-top: 5px; padding: 4px 10px; background: #6DCB2A; color: white; text-decoration: none; border-radius: 4px; font-size: 0.8em;">申し込む</a>`;
@@ -134,48 +134,77 @@ document.addEventListener('DOMContentLoaded', function() {
     eventClick: function(info) {
       if (info.event.url && !info.event.title.includes('体験レッスン')) {
         info.jsEvent.preventDefault();
-        window.open(info.event.url, '_blank'); 
+        window.open(info.event.url, '_blank');
       } else if (info.event.title.includes('体験レッスン')) {
           info.jsEvent.preventDefault();
-          // Also trigger the form update if clicking the event itself
           const timeRange = info.event.start.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) + (info.event.end ? ' - ' + info.event.end.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) : '');
           const dateStr = info.event.start.toLocaleDateString();
           const fillText = `${dateStr} ${timeRange} ${info.event.title}`;
-          updateContactForm(encodeURIComponent(fillText));
+          selectSlotFromCalendar(encodeURIComponent(fillText));
           document.getElementById('contact').scrollIntoView({behavior: 'smooth'});
       }
     }
   });
   calendar.render();
 
-  // Global function to update Google Form iframe + sync slot picker
-  window.updateContactForm = function(encodedText) {
+  // Global function to update Google Form iframe with first/second choice
+  window.updateContactForm = function() {
+      var firstSelect = document.getElementById('slot-first');
+      var secondSelect = document.getElementById('slot-second');
+      var firstText = firstSelect ? firstSelect.value : '';
+      var secondText = secondSelect ? secondSelect.value : '';
+
       const baseUrl = "https://docs.google.com/forms/d/e/1FAIpQLSc3YmdS1dzUzilBTQarXmwGIP4ZmBIi7zlB0Q99yBTDQERBOA/viewform";
-      const entryId = "entry.1487440665";
-      const newSrc = `${baseUrl}?usp=pp_url&${entryId}=${encodedText}&embedded=true`;
+      const entryFirst = "entry.1487440665";
+      const entrySecond = "entry.793766157";
+
+      var params = [];
+      if (firstText) params.push(entryFirst + '=' + encodeURIComponent(firstText));
+      if (secondText) params.push(entrySecond + '=' + encodeURIComponent(secondText));
+
+      var newSrc = params.length > 0
+          ? `${baseUrl}?usp=pp_url&${params.join('&')}&embedded=true`
+          : `${baseUrl}?embedded=true`;
 
       const iframe = document.getElementById('google-form-frame');
       if (iframe) {
           iframe.src = newSrc;
       }
 
-      // T006: Sync slot picker highlight state
-      var buttons = document.querySelectorAll('.slot-btn');
-      var decodedText = decodeURIComponent(encodedText);
-      buttons.forEach(function(btn) {
-          btn.classList.remove('slot-selected');
-          // Match by comparing decoded fill text (partial match on date+time)
-          var btnFill = decodeURIComponent(btn.getAttribute('data-fill') || '');
-          if (btnFill && decodedText.indexOf(btnFill) !== -1) {
-              btn.classList.add('slot-selected');
-          }
-      });
+      // Show confirmation message
+      var confirmation = document.getElementById('slot-confirmation');
+      if (confirmation && (firstText || secondText)) {
+          confirmation.textContent = '\u2713 希望日が設定されました';
+          confirmation.classList.add('show');
+          clearTimeout(window._slotConfirmTimer);
+          window._slotConfirmTimer = setTimeout(function() {
+              confirmation.classList.remove('show');
+          }, 3000);
+      }
   };
 
-  // T004: Render slot picker buttons
+  // Select slot from calendar event click (sets first choice)
+  window.selectSlotFromCalendar = function(encodedText) {
+      var decodedText = decodeURIComponent(encodedText);
+      var firstSelect = document.getElementById('slot-first');
+      if (!firstSelect) return;
+
+      // Find matching option by partial match
+      for (var i = 0; i < firstSelect.options.length; i++) {
+          var optVal = firstSelect.options[i].value;
+          if (optVal && decodedText.indexOf(optVal) !== -1) {
+              firstSelect.value = optVal;
+              break;
+          }
+      }
+      updateContactForm();
+  };
+
+  // Populate slot select dropdowns
   function renderSlotPicker() {
-      var container = document.getElementById('slot-picker');
-      if (!container) return;
+      var firstSelect = document.getElementById('slot-first');
+      var secondSelect = document.getElementById('slot-second');
+      if (!firstSelect || !secondSelect) return;
 
       var now = new Date();
       var endDate = new Date(now);
@@ -183,15 +212,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
       var slots = generateTrialSlots(now, endDate);
 
-      // Filter: only future slots (skip past start times on current Saturday)
+      // Filter: only future slots
       var currentHour = now.getHours();
       var currentMin = now.getMinutes();
       var todayStr = now.getFullYear() + '-' +
           (now.getMonth() + 1).toString().padStart(2, '0') + '-' +
           now.getDate().toString().padStart(2, '0');
 
+      var options = [];
       slots.forEach(function(slot) {
-          // Skip past slots on today
           if (slot.dateStr === todayStr) {
               var parts = slot.startTime.split(':');
               var slotHour = parseInt(parts[0], 10);
@@ -200,49 +229,40 @@ document.addEventListener('DOMContentLoaded', function() {
                   return;
               }
           }
-          // Skip dates in the past (before today)
           if (slot.dateStr < todayStr) {
               return;
           }
 
-          // Build label: "2/14(土) 9:00 - 10:00"
           var d = slot.date;
           var dayNames = ['日', '月', '火', '水', '木', '金', '土'];
           var label = (d.getMonth() + 1) + '/' + d.getDate() + '(' + dayNames[d.getDay()] + ') ' +
               slot.startTime + ' - ' + slot.endTime;
 
-          // Build fillText matching calendar format: "YYYY/M/D HH:MM - HH:MM 体験レッスン"
           var fillText = d.getFullYear() + '/' + (d.getMonth() + 1) + '/' + d.getDate() + ' ' +
               slot.startTime + ' - ' + slot.endTime + ' ' + slot.title;
 
-          var btn = document.createElement('button');
-          btn.className = 'slot-btn';
-          btn.textContent = label;
-          btn.setAttribute('data-fill', fillText);
+          options.push({ label: label, value: fillText });
+      });
 
-          // T005: Click handler
-          btn.addEventListener('click', function() {
-              // Remove previous selection
-              document.querySelectorAll('.slot-btn').forEach(function(b) {
-                  b.classList.remove('slot-selected');
-              });
-              // Highlight this button
-              btn.classList.add('slot-selected');
-              // Update Google Form
-              updateContactForm(encodeURIComponent(fillText));
-              // Show confirmation message
-              var confirmation = document.getElementById('slot-confirmation');
-              if (confirmation) {
-                  confirmation.textContent = '\u2713 体験希望日が設定されました';
-                  confirmation.classList.add('show');
-                  clearTimeout(window._slotConfirmTimer);
-                  window._slotConfirmTimer = setTimeout(function() {
-                      confirmation.classList.remove('show');
-                  }, 3000);
-              }
-          });
+      // Add options to both selects
+      options.forEach(function(opt) {
+          var opt1 = document.createElement('option');
+          opt1.value = opt.value;
+          opt1.textContent = opt.label;
+          firstSelect.appendChild(opt1);
 
-          container.appendChild(btn);
+          var opt2 = document.createElement('option');
+          opt2.value = opt.value;
+          opt2.textContent = opt.label;
+          secondSelect.appendChild(opt2);
+      });
+
+      // Change handlers
+      firstSelect.addEventListener('change', function() {
+          updateContactForm();
+      });
+      secondSelect.addEventListener('change', function() {
+          updateContactForm();
       });
   }
 
