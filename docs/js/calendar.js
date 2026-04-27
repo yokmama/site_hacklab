@@ -36,6 +36,7 @@ function generateTrialSlots(startDate, endDate) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+  try {
   var calendarEl = document.getElementById('calendar');
   var calendar = new FullCalendar.Calendar(calendarEl, {
     initialView: 'dayGridMonth',
@@ -146,6 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   calendar.render();
+  } catch(e) { console.error('Calendar init error:', e); }
 
   // Global function to update Google Form iframe with first/second choice
   window.updateContactForm = function() {
