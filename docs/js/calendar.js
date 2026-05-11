@@ -38,6 +38,12 @@ function generateTrialSlots(startDate, endDate) {
 document.addEventListener('DOMContentLoaded', function() {
   try {
   var calendarEl = document.getElementById('calendar');
+  if (!calendarEl || typeof FullCalendar === 'undefined') {
+    // No calendar element or FullCalendar not loaded (e.g., trial.html)
+    // Still run slot picker if elements exist
+    renderSlotPicker();
+    return;
+  }
   var calendar = new FullCalendar.Calendar(calendarEl, {
     initialView: 'dayGridMonth',
     locale: 'ja',
@@ -61,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
           start: slot.dateStr + 'T' + slot.startTime + ':00',
           end: slot.dateStr + 'T' + slot.endTime + ':00',
           color: SlotConfig.color,
-          url: '#contact'
+          url: 'trial.html'
         };
       });
 
@@ -110,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Use encodeURIComponent for safe URL insertion
             const safeText = encodeURIComponent(fillText);
             
-            buttonHtml = `<a href="#contact" onclick="selectSlotFromCalendar('${safeText}')" class="btn-tooltip" style="display: inline-block; margin-top: 5px; padding: 4px 10px; background: #6DCB2A; color: white; text-decoration: none; border-radius: 4px; font-size: 0.8em;">申し込む</a>`;
+            buttonHtml = `<a href="trial.html" class="btn-tooltip" style="display: inline-block; margin-top: 5px; padding: 4px 10px; background: #6DCB2A; color: white; text-decoration: none; border-radius: 4px; font-size: 0.8em;">申し込む</a>`;
         } else if (info.event.url) {
             // For External Events: Open in new tab
             buttonHtml = `<a href="${info.event.url}" target="_blank" class="btn-tooltip" style="display: inline-block; margin-top: 5px; padding: 4px 10px; background: #6DCB2A; color: white; text-decoration: none; border-radius: 4px; font-size: 0.8em;">申し込む</a>`;
@@ -138,11 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.open(info.event.url, '_blank');
       } else if (info.event.title.includes('体験レッスン')) {
           info.jsEvent.preventDefault();
-          const timeRange = info.event.start.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) + (info.event.end ? ' - ' + info.event.end.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) : '');
-          const dateStr = info.event.start.toLocaleDateString();
-          const fillText = `${dateStr} ${timeRange} ${info.event.title}`;
-          selectSlotFromCalendar(encodeURIComponent(fillText));
-          document.getElementById('contact').scrollIntoView({behavior: 'smooth'});
+          window.location.href = 'trial.html';
       }
     }
   });
