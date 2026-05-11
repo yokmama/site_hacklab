@@ -5,27 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>キッズプログラミングスクール8x9 東京校</title>
     <meta name="description" content="マインクラフトで学ぶ子供向けプログラミングスクール。ソフトウェア業界20年以上のプロが「技術を何に使うか」を教えます。東京・体験レッスン受付中。">
+    <!-- OGP -->
+    <meta property="og:title" content="キッズプログラミングスクール8x9 東京校">
+    <meta property="og:description" content="マインクラフトで学ぶ子供向けプログラミングスクール。AI×マイクラで楽しく学ぶマイクラAIコース、本格コーディングのプログラミングコース。無料体験レッスン受付中。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://school.0x48lab.com/">
+    <meta property="og:image" content="https://school.0x48lab.com/images/hero-poster.jpg">
+    <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Favicon -->
+    <link rel="icon" href="images/89logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/89logo.png">
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
-    <!-- Google Fonts for premium feel -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/themes/light.css" />
 </head>
 <body>
 
     <header>
         <a href="#" class="logo-link"><img src="images/89logo_tokyo.png" alt="キッズプログラミングスクール8x9 東京校" class="logo-img"></a>
         <div class="container">
-            <nav>
+            <button class="hamburger" aria-label="メニューを開く" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav id="main-nav">
                 <ul>
                     <li><a href="#about">スクールについて</a></li>
                     <li><a href="#curriculum">カリキュラム</a></li>
                     <li><a href="#price">料金</a></li>
                     <li><a href="#schedule">スケジュール</a></li>
                     <li><a href="#faq">Q&A</a></li>
-                    <li><a href="#contact" class="header-cta">体験レッスン</a></li>
+                    <li><a href="trial.html" class="header-cta">体験レッスン</a></li>
                 </ul>
             </nav>
         </div>
@@ -36,15 +46,15 @@
         <section class="hero">
             <!-- Full-width video -->
             <div class="hero-video-wrapper">
-                <video id="hero-video" muted loop playsinline poster="images/hero-poster.jpg" preload="none">
+                <video id="hero-video" muted loop playsinline poster="images/hero-poster.jpg" preload="none" aria-label="8x9東京校の教室でプログラミングを学ぶ子どもたちの様子">
                     <source src="images/hero.webm" type="video/webm">
                     <source src="images/hero.mp4" type="video/mp4">
                 </video>
             </div>
             <div class="hero-text">
-                <h1>未来を創る力を、<br>プログラミングで手に入れよう。</h1>
-                <p>「技術」を学ぶだけじゃない。<br>それを「何に使うか」を学ぶ、プロフェッショナルのための第一歩。</p>
-                <a href="#contact" class="btn btn-primary">無料体験レッスンに申込む</a>
+                <h1>マインクラフトで学ぶ、<br>AI時代のプログラミングスクール。</h1>
+                <p>小学1年生から。PC未経験でもOK。<br>PC・教材はすべてお任せ。まずは無料体験から。</p>
+                <a href="trial.html" class="btn btn-primary">無料体験レッスンに申込む</a>
             </div>
         </section>
 
@@ -57,11 +67,12 @@
                         <h3>「技術」のその先にある「目的」を。</h3>
                         <p>
                             私たちのスクールは、単にコードを書く技術を教える場所ではありません。<br>
-                            運営代表はソフトウェア業界で20年以上、Webやモバイルアプリの最先端で開発を続けてきた現役のエンジニアです。
+                            プログラミングはあくまで道具。大切なのは、その道具を使って<b>「誰のために」「何を作るか」</b>です。
                         </p>
                         <p style="margin-top: 1em;">
-                            プログラミングはあくまで道具です。大切なのは、その道具を使って<b>「誰のために」「何を作るか」</b>です。<br>
-                            実践的な技術と共に、テクノロジーを社会で活かすための思考力を育みます。
+                            運営代表はソフトウェア業界20年以上の現役エンジニア。<br>
+                            <b>10年間毎月欠かさず開催してきたマイクラデイ</b>、<b>独自開発の学習ツール2本</b>（hackCraft2 / WorldCraft AI）——<br>
+                            子どもたちが「楽しい」から始めて、気づいたら「できる」になっている。そんな環境を作り続けています。
                         </p>
                     </div>
                 </div>
@@ -69,53 +80,283 @@
         </section>
 
 
-        <!-- Curriculum Section -->
+        <!-- Course Section -->
         <section id="curriculum">
             <div class="container">
-                <h2>独自のカリキュラムとシステム</h2>
+                <h2>コース一覧</h2>
 
+                <!-- 進路フロー -->
+                <div class="course-path">
+                    <div class="course-path-item">
+                        <h4>マイクラAIコース</h4>
+                        <p class="path-target">小学1〜2年生</p>
+                        <p class="path-desc">AI × マイクラで楽しく学ぶ</p>
+                    </div>
+                    <div class="course-path-arrow">→</div>
+                    <div class="course-path-item">
+                        <h4>プログラミングコース</h4>
+                        <p class="path-target">小学校高学年〜</p>
+                        <p class="path-desc">本格コーディングに挑戦</p>
+                    </div>
+                    <div class="course-path-arrow">→</div>
+                    <div class="course-path-item">
+                        <h4>マンツーコース</h4>
+                        <p class="path-target">プログラミングコース修了後</p>
+                        <p class="path-desc">現役エンジニアと個別指導</p>
+                    </div>
+                </div>
+                <p class="course-path-note"><strong>はじめての方はマイクラAIコースへ</strong> — お子さまの成長に合わせてステップアップできます</p>
 
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <h3>hackCraft2</h3>
-                        <p>マイクラの世界で「ペット」を通じてプログラミングを学ぶ独自の教材。<br>
-                        遊びながら自然に <b>Scratch, Python, JavaScript</b> の基礎を習得できます。</p>
+                <!-- コースカード -->
+                <div class="course-cards">
+
+                    <!-- マイクラAIコース -->
+                    <div class="course-card" id="course-minecraft-ai">
+                        <div class="course-card-header">
+                            <span class="course-badge">はじめての方におすすめ</span>
+                            <h3>マイクラAIコース</h3>
+                            <div class="course-card-meta">
+                                <span>対象: 小学1〜2年生</span>
+                                <span>2年間・全48回</span>
+                                <span>月2回・90分/回</span>
+                            </div>
+                            <p class="course-card-price">¥13,200<small>/月（税込）</small></p>
+                        </div>
+                        <div class="course-card-body">
+                            <p><b>「AIを学び、AIを活用できる子どもたちを育てる。」</b></p>
+                            <p>子どもたちが大好きなMinecraftを入口に、AIとプログラミングの両方に自然と触れていくコースです。<br>
+                            PC未経験でもOK。<b>PC・教材はすべてスクールが用意</b>するので、保護者の追加費用はゼロです。</p>
+
+                            <div class="course-highlight">PC・教材・ライセンスすべて込み。ご家庭での追加購入は一切不要です。</div>
+
+                            <!-- 5章構成ステップフロー -->
+                            <h4 style="text-align: center; margin: 24px 0 8px;">2年間のステップアップ</h4>
+                            <div class="step-flow">
+                                <div class="step-item">
+                                    <div class="step-number">1</div>
+                                    <div class="step-title">マイクラで<br>PC慣れ</div>
+                                    <div class="step-period">1〜4か月</div>
+                                </div>
+                                <div class="step-arrow">→</div>
+                                <div class="step-item">
+                                    <div class="step-number">2</div>
+                                    <div class="step-title">AIワールドで<br>学ぶ</div>
+                                    <div class="step-period">5〜8か月</div>
+                                </div>
+                                <div class="step-arrow">→</div>
+                                <div class="step-item">
+                                    <div class="step-number">3</div>
+                                    <div class="step-title">AIを道具<br>として使う</div>
+                                    <div class="step-period">9〜12か月</div>
+                                </div>
+                                <div class="step-arrow">→</div>
+                                <div class="step-item">
+                                    <div class="step-number">4</div>
+                                    <div class="step-title">AI×<br>コーディング</div>
+                                    <div class="step-period">13〜18か月</div>
+                                </div>
+                                <div class="step-arrow">→</div>
+                                <div class="step-item">
+                                    <div class="step-number">5</div>
+                                    <div class="step-title">コーディング<br>深化</div>
+                                    <div class="step-period">19〜24か月</div>
+                                </div>
+                            </div>
+
+                            <!-- 各章の詳細（折りたたみ） -->
+                            <details class="course-detail">
+                                <summary>第1章: マイクラで遊んでPC慣れ（1〜4か月）</summary>
+                                <div class="detail-content">
+                                    マイクラの世界で遊びながら、マウス操作・キーボード入力・タイピングに慣れます。AIはまだ使わず、まず「PCって楽しい！」を体感します。
+                                </div>
+                            </details>
+                            <details class="course-detail">
+                                <summary>第2章: マイクラのAIワールドで学ぶ（5〜8か月）</summary>
+                                <div class="detail-content">
+                                    マイクラの世界に用意されたAI教材で、AIとは何か、身の回りのどこにAIがあるかを遊びながら体験的に学びます。
+                                </div>
+                            </details>
+                            <details class="course-detail">
+                                <summary>第3章: AIを道具として使う（9〜12か月）</summary>
+                                <div class="detail-content">
+                                    AIを自分の道具として使いこなす練習。AIに役割を与えて会話したり、物語を一緒に作ったり、AIの出力が正しいか自分で検証する力を養います。
+                                </div>
+                            </details>
+                            <details class="course-detail">
+                                <summary>第4章: AI×コーディング（13〜18か月）</summary>
+                                <div class="detail-content">
+                                    マイクラの世界でブロックコーディングに挑戦。AIにヒントを聞きながら、順次実行・ループ・条件分岐を学びます。
+                                </div>
+                            </details>
+                            <details class="course-detail">
+                                <summary>第5章: AI×コーディング深化（19〜24か月）</summary>
+                                <div class="detail-content">
+                                    関数・変数を使ったプログラミング、ゲーム制作・自動化に挑戦。卒業制作として「自分だけの冒険物語」をAIと一緒にPDFに仕上げます。
+                                </div>
+                            </details>
+
+                            <!-- 到達目標 -->
+                            <h4 style="margin-top: 24px;">2年間の到達目標</h4>
+                            <ul class="course-goals">
+                                <li>タイピングが十分にできる</li>
+                                <li>AIを道具として使いこなせる（指示・評価・改善）</li>
+                                <li>プログラミングの基礎ができる（くりかえし・場合分け・命令のまとめ方）</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="feature-card">
-                        <h3>WorldCraft AI</h3>
-                        <p>スクール独自のAIシステムと生成AIを活用した最先端の環境。<br>
-                        <b>Kotlin</b> を使用してマイクラ上でのMod開発を行い、本格的なコーディングとAI共創力を養います。</p>
+
+                    <!-- プログラミングコース -->
+                    <div class="course-card" id="course-programming">
+                        <div class="course-card-header">
+                            <h3>プログラミングコース</h3>
+                            <div class="course-card-meta">
+                                <span>対象: 小学校高学年〜（ご相談ください）</span>
+                                <span>月2回・90分/回</span>
+                            </div>
+                            <p class="course-card-price">¥13,200<small>/月（税込）</small></p>
+                        </div>
+                        <div class="course-card-body">
+                            <p><b>「作りたいもの」を実現する力を、マイクラの世界で身につける。</b></p>
+                            <p>プログラミング言語はあくまで道具。大切なのは、その道具を使って<b>「何を作るか」</b>です。<br>
+                            独自ツール hackCraft2 と WorldCraft AI を使い、子ども自身がやりたいことを形にしていきます。</p>
+
+                            <h4 style="margin-top: 16px;">こんなことができるようになります</h4>
+                            <div class="course-tags" style="margin-top: 12px;">
+                                <span class="course-tag">マイクラMod開発</span>
+                                <span class="course-tag">ゲーム制作</span>
+                                <span class="course-tag">Webアプリ制作</span>
+                                <span class="course-tag">データ分析</span>
+                                <span class="course-tag">競技プログラミング</span>
+                                <span class="course-tag">Android / iOSアプリ</span>
+                                <span class="course-tag">電子工作（micro:bit）</span>
+                            </div>
+
+                            <details class="course-detail" style="margin-top: 16px;">
+                                <summary>hackCraft2 — 初心者・中級者向け</summary>
+                                <div class="detail-content">
+                                    マイクラの世界で「ペット」にプログラミングで命令を出す独自ツール。
+                                    遊んでいるうちに、気づいたら本格的なコードが書けるようになっています。
+                                    やりたいことに合わせて Scratch、Python、JavaScript などを道具として使います。
+                                </div>
+                            </details>
+                            <details class="course-detail">
+                                <summary>WorldCraft AI — 中級者・上級者向け</summary>
+                                <div class="detail-content">
+                                    スクール独自のAIシステムと生成AIを活用した最先端の環境。
+                                    マイクラ上でのMod開発やAIとの共創を通じて、本格的なものづくりに挑戦します。
+                                </div>
+                            </details>
+                        </div>
                     </div>
-                    <div class="feature-card">
-                        <h3>成長記録システム</h3>
-                        <p>子供たちの学習進捗や作った作品、成長の軌跡を記録・可視化する独自のシステム。<br>
-                        一人ひとりの成長をしっかりと記録し、確実なスキルアップをサポートします。</p>
-    
+
                 </div>
 
+                <!-- マンツーコース -->
+                <div class="course-card course-card--small" id="course-mantu">
+                    <div class="course-card-header">
+                        <h3>マンツーコース</h3>
+                        <div class="course-card-meta">
+                            <span>プログラミングコース修了後</span>
+                            <span>月2回・60分/回</span>
+                        </div>
+                        <p class="course-card-price">¥13,200<small>/月（税込）</small></p>
+                    </div>
+                    <div class="course-card-body">
+                        <p>現役エンジニアのメンターがオンラインで個別にフォロー。<br>
+                        「子どもがやりたいこと」を最重視し、実際の作品作りを通じて高度なIT技術を実践的に学びます。</p>
+                    </div>
+                </div>
 
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="trial.html" class="btn btn-primary">まずは無料体験レッスンへ</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Growth Tracking System Section -->
+        <section id="system" style="background-color: var(--color-bg-light);">
+            <div class="container">
+                <h2>成長が「見える」独自システム</h2>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <p style="text-align: center; font-size: 1.05rem; margin-bottom: 32px;">
+                        独自のカリキュラムシステムで、毎回のレッスンレポートやお子さまの成長を記録。<br>
+                        <b>LINEアプリからいつでも確認</b>できるので、教室にいなくても成長を見守れます。
+                    </p>
+
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 24px;">
+                        <div style="background: white; border-radius: 12px; padding: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.05);">
+                            <h4 style="font-size: 1rem; margin-bottom: 12px; color: var(--color-text-main);">能力の成長レポート</h4>
+                            <img src="images/system/growth-report.png" alt="問題理解・計画工夫・試行錯誤・振り返りの成長グラフ" style="width: 100%; border-radius: 8px; border: 1px solid #eee;" loading="lazy">
+                            <p style="font-size: 0.85rem; color: var(--color-text-light); margin-top: 8px;">問題理解・計画力・試行錯誤・振り返りの4つの力をグラフで可視化</p>
+                        </div>
+                        <div style="background: white; border-radius: 12px; padding: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.05);">
+                            <h4 style="font-size: 1rem; margin-bottom: 12px; color: var(--color-text-main);">タイピング・学習進捗</h4>
+                            <img src="images/system/typing-report.png" alt="タイピング速度と正確率の推移グラフ、言語別習得状況" style="width: 100%; border-radius: 8px; border: 1px solid #eee;" loading="lazy">
+                            <p style="font-size: 0.85rem; color: var(--color-text-light); margin-top: 8px;">タイピング速度・正確率の推移と、言語ごとの習得状況を一目で確認</p>
+                        </div>
+                    </div>
+
+                    <div class="course-highlight">
+                        保護者の方はLINEアプリから、お子さまのレッスンレポート・成長グラフ・タイピング記録をいつでも確認できます。
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Pricing Section -->
-        <section id="price" style="background-color: var(--color-bg-light);">
+        <section id="price">
             <div class="container">
-                <h2>料金・特典</h2>
+                <h2>料金</h2>
                 <div style="max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                    <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; text-align: center; margin-bottom: 30px;">
-                        <div style="flex: 1; min-width: 250px; padding: 20px; border: 1px solid #eee; border-radius: 8px;">
-                            <h3 style="font-size: 1.2rem; color: var(--color-text-light); margin-bottom: 10px;">入会金</h3>
-                            <p style="font-size: 2rem; font-weight: bold; color: var(--color-primary);">¥22,000</p>
-                            <span style="font-size: 0.9rem; color: #888;">(税込)</span>
-                        </div>
-                        <div style="flex: 1; min-width: 250px; padding: 20px; border: 1px solid #eee; border-radius: 8px; background-color: #fdfdfd;">
-                            <h3 style="font-size: 1.2rem; color: var(--color-text-light); margin-bottom: 10px;">月額授業料</h3>
-                            <p style="font-size: 2rem; font-weight: bold; color: var(--color-primary);">¥13,200</p>
-                            <span style="font-size: 0.9rem; color: #888;">(税込)</span>
-                        </div>
+                    <!-- 入会金 -->
+                    <div style="text-align: center; margin-bottom: 30px; padding: 20px; border: 1px solid #eee; border-radius: 8px;">
+                        <h3 style="font-size: 1.2rem; color: var(--color-text-light); margin-bottom: 10px;">入会金</h3>
+                        <p style="font-size: 2rem; font-weight: bold; color: var(--color-primary);">¥22,000</p>
+                        <span style="font-size: 0.9rem; color: #888;">(税込)</span>
                     </div>
-                    
 
+                    <!-- コース別月謝 -->
+                    <h3 style="text-align: center; font-size: 1.1rem; color: var(--color-text-light); margin-bottom: 20px;">月額授業料（全コース共通）</h3>
+                    <div style="text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 2.2rem; font-weight: bold; color: var(--color-primary);">¥13,200</p>
+                        <span style="font-size: 0.9rem; color: #888;">(税込)</span>
+                    </div>
+
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+                        <thead>
+                            <tr style="border-bottom: 2px solid var(--color-primary);">
+                                <th style="padding: 10px; text-align: left;">コース</th>
+                                <th style="padding: 10px; text-align: center;">回数</th>
+                                <th style="padding: 10px; text-align: center;">時間</th>
+                                <th style="padding: 10px; text-align: center;">備考</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #eee;">
+                                <td style="padding: 10px; font-weight: 600;">マイクラAIコース</td>
+                                <td style="padding: 10px; text-align: center;">月2回</td>
+                                <td style="padding: 10px; text-align: center;">90分</td>
+                                <td style="padding: 10px; text-align: center; color: var(--color-primary); font-weight: 600;">PC・教材込み</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #eee;">
+                                <td style="padding: 10px; font-weight: 600;">プログラミングコース</td>
+                                <td style="padding: 10px; text-align: center;">月2回</td>
+                                <td style="padding: 10px; text-align: center;">90分</td>
+                                <td style="padding: 10px; text-align: center;">—</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; font-weight: 600;">マンツーコース</td>
+                                <td style="padding: 10px; text-align: center;">月2回</td>
+                                <td style="padding: 10px; text-align: center;">60分</td>
+                                <td style="padding: 10px; text-align: center;">オンライン個別</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="course-highlight" style="margin-top: 20px;">
+                        マイクラAIコースはPC・教材・ライセンスすべて込み。ご家庭での追加購入は一切不要です。
+                    </div>
                 </div>
             </div>
         </section>
@@ -123,7 +364,7 @@
         <!-- Schedule Section -->
         <section id="schedule" class="system-section">
             <div class="container">
-                <h2>Schedule</h2>
+                <h2>スケジュール</h2>
                 <div id="calendar" style="max-width: 900px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);"></div>
                 
                 <!-- Legend/Info -->
@@ -134,6 +375,66 @@
                 </div>
             </div>
         </section>
+
+        <!-- Events & Workshops Section -->
+        <section id="events">
+            <div class="container">
+                <h2>イベント・ワークショップ</h2>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <p style="text-align: center; font-size: 1.05rem; margin-bottom: 32px;">
+                        レッスン以外にも、月1〜2回のイベントやワークショップを開催。<b>生徒は参加費無料</b>です。<br>
+                        入会前でも参加OK。お子さまが馴染み、友だちができ、「もっと来たい！」と思える場です。
+                    </p>
+
+                    <!-- マイクラデイ -->
+                    <h3 style="text-align: center; font-size: 1.2rem; margin-bottom: 16px;">マインクラフトデイ</h3>
+                    <p style="text-align: center; font-size: 0.9rem; color: var(--color-text-light); margin-bottom: 16px;">
+                        毎月1回開催・10年間継続運営。管理されたサーバーで安全にマイクラを楽しめるコミュニティイベント。
+                    </p>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 8px;">
+                        <img src="images/minecraftday/web_IMG_0603.jpg" alt="マインクラフトデイで盛り上がる子どもたち" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px;" loading="lazy">
+                        <img src="images/minecraftday/web_IMG_0525.jpg" alt="友だち同士で教え合いながらプログラミング" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px;" loading="lazy">
+                        <img src="images/minecraftday/web_IMG_0336.jpg" alt="PCに向かって真剣に取り組む子どもたち" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px;" loading="lazy">
+                    </div>
+                    <p style="text-align: center; margin-bottom: 32px;">
+                        <a href="https://minecraftday.jp/" target="_blank" rel="noopener noreferrer" style="font-size: 0.85rem; color: var(--color-tech-blue); text-decoration: underline;">マインクラフトデイ公式サイト</a>
+                    </p>
+
+                    <!-- 特別ワークショップ -->
+                    <h3 style="text-align: center; font-size: 1.2rem; margin-bottom: 16px;">特別ワークショップ</h3>
+                    <p style="text-align: center; font-size: 0.9rem; color: var(--color-text-light); margin-bottom: 16px;">
+                        月1回程度、レッスンではできない特別なテーマに挑戦。電子工作・PC組み立てなども。
+                    </p>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 8px;">
+                        <div style="overflow: hidden; border-radius: 8px;">
+                            <img src="images/workshop/web_roblox.jpg" alt="Robloxでゲーム制作" style="width: 100%; height: 120px; object-fit: cover;" loading="lazy">
+                            <p style="text-align: center; font-weight: 600; font-size: 0.85rem; padding: 8px 4px 4px;">Robloxでゲーム制作</p>
+                        </div>
+                        <div style="overflow: hidden; border-radius: 8px;">
+                            <img src="images/workshop/web_redstone.jpg" alt="レッドストーンで論理回路" style="width: 100%; height: 120px; object-fit: cover;" loading="lazy">
+                            <p style="text-align: center; font-weight: 600; font-size: 0.85rem; padding: 8px 4px 4px;">レッドストーンで論理回路</p>
+                        </div>
+                        <div style="overflow: hidden; border-radius: 8px;">
+                            <img src="images/workshop/web_canva.jpg" alt="Canvaでデザイン体験" style="width: 100%; height: 120px; object-fit: cover;" loading="lazy">
+                            <p style="text-align: center; font-weight: 600; font-size: 0.85rem; padding: 8px 4px 4px;">Canvaでデザイン体験</p>
+                        </div>
+                    </div>
+                    <p style="text-align: center; margin-bottom: 24px;">
+                        <a href="https://8x9lab.doorkeeper.jp/" target="_blank" rel="noopener noreferrer" style="font-size: 0.85rem; color: var(--color-tech-blue); text-decoration: underline;">イベント一覧・申し込みはこちら</a>
+                    </p>
+
+                    <!-- Instagram -->
+                    <div style="text-align: center; margin-top: 16px; padding-top: 24px; border-top: 1px solid #eee;">
+                        <p style="color: var(--color-text-light); margin-bottom: 12px; font-size: 0.9rem;">教室やイベントの様子はInstagramでも発信中</p>
+                        <a href="https://www.instagram.com/8x9tokyo/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 10px; background: white; padding: 10px 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); text-decoration: none; color: var(--color-text-main);">
+                            <img src="images/instagram-glyph.png" alt="Instagram" style="width: 28px; height: 28px;">
+                            <span style="font-weight: 600; font-size: 0.9rem;">@8x9tokyo</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
         <!-- FAQ Section -->
         <section id="faq" style="background-color: #fafafa;">
@@ -161,8 +462,8 @@
                         </div>
                         <div class="faq-answer">
                             <span class="faq-icon-a">A</span>
-                            <p>基礎を学んだ後は、「子供のやりたいこと」を最重視したオンライン・マンツーマン授業へとステップアップします。<br>
-                            現役エンジニアなどのメンターが個別にフォローし、実際の作品作りを通して高度なIT技術を実践的に学んでいきます。</p>
+                            <p>マイクラAIコースで基礎を身につけた後は、プログラミングコースで本格的なコーディングに挑戦します。さらにその先には、現役エンジニアのメンターによるマンツーコースも用意しています。<br>
+                            お子さまの成長とやりたいことに合わせて、無理なくステップアップできる3段階の構成です。</p>
                         </div>
                     </div>
 
@@ -187,9 +488,9 @@
                         </div>
                         <div class="faq-answer">
                             <span class="faq-icon-a">A</span>
-                            <p>東京校では、原則としてご自身のノートパソコンのお持ち込みをお願いしております。<br>
-                            高スペックなPCは必要ありません（2万円台の中古PC等でも十分学習可能な教材を使用しています）。<br>
-                            安価なPCの購入サポートも行っておりますので、お気軽にご相談ください。</p>
+                            <p><b>マイクラAIコース</b>ではPC・教材をスクールがすべてご用意しますので、お持ち込みは不要です。<br>
+                            <b>プログラミングコース</b>では、原則としてご自身のノートパソコンのお持ち込みをお願いしております。
+                            高スペックなPCは必要ありません（2万円台の中古PC等でも十分学習可能な教材を使用しています）。安価なPCの購入サポートも行っておりますので、お気軽にご相談ください。</p>
                         </div>
                     </div>
 
@@ -224,7 +525,7 @@
         <!-- Access Section -->
         <section id="access" class="access-section">
             <div class="container">
-                <h2>Access</h2>
+                <h2>アクセス</h2>
                 <div class="access-content">
                     <div class="access-info">
                         <p class="access-address">
@@ -232,6 +533,7 @@
                             東京都新宿区下落合３丁目１７−４２<br>
                             目白ファッション＆アートカレッジ 1号館 207号
                         </p>
+                        <p style="font-size: 0.9rem; color: var(--color-text-light); margin-bottom: 16px;">JR山手線「目白駅」徒歩10分 / 西武新宿線「下落合駅」徒歩5分</p>
                         <a href="https://maps.app.goo.gl/g8rmGwjpybgUFEPR9" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Google Mapで見る</a>
                     </div>
                     <div class="access-map">
@@ -249,54 +551,24 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <h2>無料体験レッスンお申込み</h2>
-                <p>まずは実際にプログラミングの楽しさを体験してください。<br>以下のフォームよりお気軽にお申し込みいただけます。</p>
-                
-                <!-- Slot Picker: 体験レッスン日時選択UI -->
-                <div class="slot-picker-wrapper">
-                    <h3 class="slot-picker-heading">体験レッスンの希望日時を選択してください</h3>
-                    <div class="slot-select-group">
-                        <div class="slot-select-item">
-                            <label for="slot-first" class="slot-select-label">第一希望</label>
-                            <select id="slot-first" class="slot-select">
-                                <option value="">-- 選択してください --</option>
-                            </select>
-                        </div>
-                        <div class="slot-select-item">
-                            <label for="slot-second" class="slot-select-label">第二希望</label>
-                            <select id="slot-second" class="slot-select">
-                                <option value="">-- 選択してください --</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div id="slot-confirmation" class="slot-confirmation"></div>
-                    <p class="slot-guidance">上記以外の日程をご希望の場合は、フォーム内の備考欄にご記入ください。</p>
-                </div>
-
-                <div class="embed-container">
-                    <!-- Google Form Embed Placeholder -->
-                    <!-- ユーザー様へ: ここにGoogleフォームの埋め込みコード(iframe)を貼り付けてください -->
-                    <iframe
-                        id="google-form-frame"
-                        src="https://docs.google.com/forms/d/e/1FAIpQLSc3YmdS1dzUzilBTQarXmwGIP4ZmBIi7zlB0Q99yBTDQERBOA/viewform?embedded=true"
-                        width="100%"
-                        height="1600"
-                        frameborder="0"
-                        marginheight="0"
-                        marginwidth="0"
-                        style="background: white; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);"
-                    >読み込んでいます…</iframe>
-                </div>
+        <!-- Trial CTA Section -->
+        <section class="contact-section">
+            <div class="container" style="text-align: center;">
+                <h2>無料体験レッスン受付中</h2>
+                <p>まずは実際にプログラミングの楽しさを体験してください。</p>
+                <a href="trial.html" class="btn btn-primary" style="margin-top: 20px; font-size: 1.2rem; padding: 16px 40px;">無料体験レッスンに申込む</a>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p style="margin-bottom: 10px;"><a href="https://www.instagram.com/8x9tokyo/" target="_blank" rel="noopener noreferrer" style="color: #ddd; font-size: 1.5rem;"><i class="fa-brands fa-instagram"></i> Instagram</a></p>
+            <div style="margin-bottom: 16px;">
+                <a href="https://www.instagram.com/8x9tokyo/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; color: white; opacity: 0.9; transition: opacity 0.3s ease;">
+                    <img src="images/instagram-glyph.png" alt="Instagram" style="width: 24px; height: 24px; filter: brightness(10);">
+                    <span style="font-size: 0.95rem; font-weight: 500;">@8x9tokyo</span>
+                </a>
+            </div>
             <p>&copy; 2026 Kids Programming School 8x9 Tokyo. All Rights Reserved.</p>
             <p style="font-size: 0.8rem; margin-top: 10px;"><a href="https://8x9.jp/" target="_blank" style="text-decoration: underline; color: #aaa;">8x9 本家サイト（神戸・大阪）はこちら</a></p>
         </div>
@@ -305,7 +577,6 @@
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
-    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/themes/light.css" />
     <script src="js/script.js"></script>
     <script src="js/calendar.js"></script>
     <script>
