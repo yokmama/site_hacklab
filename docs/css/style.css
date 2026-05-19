@@ -965,3 +965,90 @@ footer p {
   font-size: 0.8rem;
   font-weight: 500;
 }
+
+/* ========================================
+   Track Record Section
+   ======================================== */
+#track-record {
+  background-color: var(--color-bg-light);
+}
+
+.track-record-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.track-record-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eee;
+  transition: transform 0.3s ease;
+}
+
+.track-record-card:hover {
+  transform: translateY(-3px);
+}
+
+.track-record-card-body {
+  padding: 24px 20px;
+  text-align: center;
+}
+
+.track-record-card-body h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.track-record-card-body h3 a {
+  color: var(--color-tech-blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.track-record-card-body h3 a:hover {
+  opacity: 0.7;
+}
+
+.track-record-type {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+  margin-bottom: 12px;
+}
+
+.track-record-desc {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--color-text-main);
+  margin-bottom: 16px;
+}
+
+.track-record-badge {
+  display: inline-block;
+  padding: 3px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.track-record-badge--active {
+  background-color: #e8f5e1;
+  color: #3a7d1a;
+}
+
+.track-record-badge--ended {
+  background-color: #f0f0f0;
+  color: #888;
+}
+
+@media (max-width: 768px) {
+  .track-record-cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
