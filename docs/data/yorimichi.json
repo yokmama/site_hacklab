@@ -1,0 +1,33 @@
+{
+  "_comment": "よりみちの一覧（マイクラAIコース第2章「AIワールドで学ぶ」の中で取り組む）。トップページ（マイクラAIコース・よりみちセクション）と yorimichi/index.html がこのファイルを読んで表示する。追加手順は yorimichi/README.md を参照。パスはすべて docs/ からの相対パスで書く。",
+  "items": [
+    {
+      "id": "redstone",
+      "status": "open",
+      "title": "半導体を学ぼう",
+      "name": "レッドストーンラボ",
+      "tool": "Minecraft レッドストーン",
+      "catch": "トーチ1本から、半導体チップへ。",
+      "summary": "レッドストーントーチはトランジスタと同じ働きをする部品。NOT・AND・XORから2ビットの足し算機まで、16の問題を自分の手で組み上げます。",
+      "tags": ["論理回路", "2進数", "メモリ"],
+      "url": "yorimichi/redstone.html",
+      "image": "images/yorimichi/redstone/web_calculator.jpg",
+      "imageAlt": "マインクラフト内に建てたレッドストーンの計算回路と7セグメント表示",
+      "accent": "#d63a2f"
+    },
+    {
+      "id": "edm",
+      "status": "open",
+      "title": "EDMを学ぼう",
+      "name": "Strudel for Xcratch",
+      "tool": "Scratch × Strudel",
+      "catch": "ブロックをつんで、クラブミュージックを鳴らそう。",
+      "summary": "音楽をコードで演奏する Strudel を、8x9が Scratch のブロックにしました。ビートを重ね、メロディを書き、音を変形させて、自分の曲をつくります。",
+      "tags": ["リズム", "パターン", "音づくり"],
+      "url": "yorimichi/edm.html",
+      "image": "images/yorimichi/edm/web_pianoroll.png",
+      "imageAlt": "Scratchのステージに表示したピアノロールと、リズムにあわせて踊るねこ",
+      "accent": "#6c4ce0"
+    }
+  ]
+}

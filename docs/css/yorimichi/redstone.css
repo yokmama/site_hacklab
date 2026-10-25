@@ -1,0 +1,214 @@
+/* よりみち: 半導体を学ぼう（yorimichi/redstone.html） */
+.theme-redstone {
+  --ym-bg: #fffaf3;
+  --ym-bg-2: #fff3e6;
+  --ym-line: #f1dfcf;
+  --ym-accent: #d63a2f;
+  --ym-accent-glow: #ff6b4a;
+  --ym-accent-soft: #ffe6da;
+  --ym-chip: #fbf3ea;
+  --ym-shadow: rgba(120, 70, 30, 0.06);
+}
+
+/* レバー体験 */
+.rs-lab {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 24px;
+  max-width: 880px;
+  margin: 0 auto;
+  background: var(--ym-panel);
+  border: 1px solid var(--ym-line);
+  border-radius: 16px;
+  padding: 28px;
+}
+
+.rs-lab-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rs-lever {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 18px 20px;
+  border-radius: 10px;
+  border: 2px solid var(--ym-line);
+  background: var(--ym-chip);
+  color: var(--ym-text);
+  font: inherit;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.rs-lever:focus-visible {
+  outline: 2px solid var(--ym-highlight);
+  outline-offset: 2px;
+}
+
+.rs-lever-label {
+  font-family: var(--ym-mono);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.rs-lever-state {
+  font-family: var(--ym-mono);
+  font-size: 0.85rem;
+  color: var(--ym-muted);
+}
+
+.rs-lever[aria-pressed="true"] {
+  border-color: var(--ym-accent);
+  background: var(--ym-accent-soft);
+  box-shadow: 0 0 14px color-mix(in srgb, var(--ym-accent) 30%, transparent);
+}
+
+.rs-lever[aria-pressed="true"] .rs-lever-state {
+  color: var(--ym-accent);
+}
+
+.rs-lab-gates {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.rs-gate {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  border-radius: 10px;
+  background: var(--ym-chip);
+  border: 1px solid var(--ym-line);
+}
+
+.rs-gate strong {
+  display: block;
+  font-family: var(--ym-mono);
+  font-size: 0.95rem;
+}
+
+.rs-gate small {
+  color: var(--ym-muted);
+  font-size: 0.75rem;
+}
+
+.rs-lamp {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  background: #e6d9cb;
+  border: 2px solid #cdb9a5;
+  transition: background 0.15s, box-shadow 0.15s;
+}
+
+.is-on > .rs-lamp {
+  background: var(--ym-highlight);
+  box-shadow: 0 0 18px var(--ym-highlight);
+}
+
+.rs-lab-adder {
+  grid-column: 1 / -1;
+  border-top: 1px dashed var(--ym-line);
+  padding-top: 20px;
+  text-align: center;
+}
+
+.rs-adder-title {
+  color: var(--ym-muted);
+  font-size: 0.9rem;
+}
+
+.rs-adder-eq {
+  font-family: var(--ym-mono);
+  font-size: 2rem;
+  margin: 4px 0;
+}
+
+.rs-adder-eq small {
+  font-family: var(--font-main);
+  font-size: 0.8rem;
+  color: var(--ym-muted);
+}
+
+.rs-adder-bits {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.rs-bit {
+  display: inline-block;
+  min-width: 1.4em;
+  border-radius: 6px;
+  background: var(--ym-chip);
+  border: 1px solid var(--ym-line);
+}
+
+.rs-bit.is-on {
+  background: #fff1dc;
+  border-color: var(--ym-highlight);
+  color: var(--ym-highlight-text);
+}
+
+.rs-adder-note {
+  color: var(--ym-muted);
+  font-size: 0.88rem;
+}
+
+/* 真理値表 */
+.rs-truth {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.rs-truth table {
+  margin: 0 auto 6px;
+  border-collapse: collapse;
+  font-family: var(--ym-mono);
+}
+
+.rs-truth th,
+.rs-truth td {
+  border: 1px solid var(--ym-line);
+  padding: 6px 18px;
+}
+
+.rs-truth th {
+  color: var(--ym-muted);
+  font-weight: 600;
+}
+
+.rs-truth td.on {
+  color: var(--ym-highlight-text);
+  font-weight: 700;
+}
+
+.rs-truth td.off {
+  color: #b5aca3;
+}
+
+.rs-truth small {
+  color: var(--ym-muted);
+  font-size: 0.78rem;
+}
+
+@media (max-width: 768px) {
+  .rs-lab {
+    grid-template-columns: 1fr;
+    padding: 18px;
+  }
+
+  .rs-lab-inputs {
+    flex-direction: row;
+  }
+
+  .rs-adder-eq {
+    font-size: 1.5rem;
+  }
+}

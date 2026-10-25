@@ -38,6 +38,7 @@
                 <ul>
                     <li><a href="#about">スクールについて</a></li>
                     <li><a href="#curriculum">カリキュラム</a></li>
+                    <li><a href="yorimichi/">よりみち</a></li>
                     <li><a href="#price">料金</a></li>
                     <li><a href="#schedule">スケジュール</a></li>
                     <li><a href="#faq">Q&A</a></li>
@@ -138,7 +139,7 @@
                 <div class="course-path">
                     <div class="course-path-item">
                         <h4>マイクラAIコース</h4>
-                        <p class="path-target">小学1〜2年生</p>
+                        <p class="path-target">小学1〜4年生</p>
                         <p class="path-desc">AI × マイクラで楽しく学ぶ</p>
                     </div>
                     <div class="course-path-arrow">→</div>
@@ -165,7 +166,7 @@
                             <span class="course-badge">はじめての方におすすめ</span>
                             <h3>マイクラAIコース</h3>
                             <div class="course-card-meta">
-                                <span>対象: 小学1〜2年生</span>
+                                <span>対象: 小学1〜4年生</span>
                                 <span>2年間・全48回</span>
                                 <span>月2回・90分/回</span>
                             </div>
@@ -191,6 +192,7 @@
                                     <div class="step-number">2</div>
                                     <div class="step-title">AIワールドで<br>学ぶ</div>
                                     <div class="step-period">5〜8か月</div>
+                                    <a href="#yorimichi" class="step-yorimichi">＋よりみち</a>
                                 </div>
                                 <div class="step-arrow">→</div>
                                 <div class="step-item">
@@ -212,6 +214,16 @@
                                 </div>
                             </div>
 
+                            <!-- よりみち（一覧は data/yorimichi.json から js/yorimichi.js が描画） -->
+                            <div class="yorimichi-branch">
+                                <div class="yorimichi-branch-head">
+                                    <strong>第2章の中で「よりみち」</strong>
+                                    <a href="yorimichi/">よりみち一覧</a>
+                                </div>
+                                <p>AIワールドで学ぶ期間（5〜8か月）の中で、いったん寄り道。8x9が自分たちで作った教材で本物の技術にふれます。</p>
+                                <div class="yorimichi-chips" data-yorimichi-list data-variant="chip" data-base=""></div>
+                            </div>
+
                             <!-- 各章の詳細（折りたたみ） -->
                             <details class="course-detail">
                                 <summary>第1章: マイクラでPCの操作に慣れる（1〜4か月）</summary>
@@ -223,6 +235,7 @@
                                 <summary>第2章: マイクラのAIワールドで学ぶ（5〜8か月）</summary>
                                 <div class="detail-content">
                                     マイクラの世界に用意されたAI教材で、AIとは何か、身の回りのどこにAIがあるかを遊びながら体験的に学びます。
+                                    この章の中で、半導体やEDMなどの<a href="yorimichi/" style="text-decoration: underline;">「よりみち」</a>にも挑戦します。
                                 </div>
                             </details>
                             <details class="course-detail">
@@ -320,6 +333,20 @@
                     <a href="trial.html" class="btn btn-primary">まずは無料体験レッスンへ</a>
                 </div>
 
+            </div>
+        </section>
+
+        <!-- よりみち（一覧は data/yorimichi.json から js/yorimichi.js が描画） -->
+        <section id="yorimichi" class="yorimichi-section">
+            <div class="container">
+                <p class="yorimichi-kicker">YORIMICHI</p>
+                <h2>よりみちで、本物の技術にふれる。</h2>
+                <p class="yorimichi-lead">
+                    マイクラAIコースの第2章「マイクラのAIワールドで学ぶ」（5〜8か月）の中には、本線から少しはずれて寄り道する時間があります。<br>
+                    半導体、音楽、……。教材はすべて8x9が自分たちで作り、少しずつ増やしています。
+                </p>
+                <div class="yorimichi-cards" data-yorimichi-list data-variant="card" data-base=""></div>
+                <p class="yorimichi-more"><a href="yorimichi/" class="btn btn-primary">よりみち一覧を見る</a></p>
             </div>
         </section>
 
@@ -628,6 +655,7 @@
     <script src="https://unpkg.com/tippy.js@6"></script>
     <script src="js/script.js"></script>
     <script src="js/calendar.js"></script>
+    <script src="js/yorimichi.js"></script>
     <script>
     (function() {
       var video = document.getElementById('hero-video');

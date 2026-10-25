@@ -1,0 +1,152 @@
+/* よりみち: EDMを学ぼう（yorimichi/edm.html） */
+.theme-edm {
+  --ym-bg: #faf8ff;
+  --ym-bg-2: #f3effd;
+  --ym-line: #e4dcf7;
+  --ym-accent: #6c4ce0;
+  --ym-accent-glow: #9b7dff;
+  --ym-accent-soft: #ece6ff;
+  --ym-chip: #f6f3ff;
+  --ym-highlight: #00b8d9;
+  --ym-highlight-text: #00809a;
+  --ym-shadow: rgba(60, 40, 120, 0.07);
+}
+
+/* ビート体験 */
+.edm-beat {
+  max-width: 880px;
+  margin: 0 auto;
+  background: var(--ym-panel);
+  border: 1px solid var(--ym-line);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 3px 10px var(--ym-shadow);
+}
+
+.edm-beat-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.edm-play,
+.edm-presets button {
+  font: inherit;
+  cursor: pointer;
+  border-radius: 999px;
+  border: 2px solid var(--ym-accent);
+  transition: background 0.15s, color 0.15s;
+}
+
+.edm-play {
+  background: var(--ym-accent);
+  color: #fff;
+  font-weight: 700;
+  padding: 8px 24px;
+}
+
+.edm-play[aria-pressed="true"] {
+  background: var(--ym-panel);
+  color: var(--ym-accent);
+}
+
+.edm-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.edm-presets button {
+  background: var(--ym-panel);
+  color: var(--ym-accent);
+  font-size: 0.85rem;
+  padding: 6px 14px;
+}
+
+.edm-presets button:hover {
+  background: var(--ym-accent-soft);
+}
+
+.edm-play:focus-visible,
+.edm-presets button:focus-visible,
+.edm-cell:focus-visible {
+  outline: 2px solid var(--ym-highlight);
+  outline-offset: 2px;
+}
+
+.edm-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.edm-row {
+  display: grid;
+  grid-template-columns: 96px repeat(16, 1fr);
+  gap: 4px;
+  align-items: center;
+}
+
+.edm-row-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.edm-row-label small {
+  display: block;
+  font-family: var(--ym-mono);
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--ym-muted);
+}
+
+.edm-cell {
+  aspect-ratio: 1;
+  border-radius: 5px;
+  border: 1px solid var(--ym-line);
+  background: var(--ym-chip);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.1s, transform 0.1s;
+}
+
+/* 4マスごと（1拍ごと）に区切りを見せる */
+.edm-cell.is-beat {
+  border-color: #cfc3f0;
+}
+
+.edm-cell[aria-pressed="true"] {
+  background: var(--ym-accent);
+  border-color: var(--ym-accent);
+}
+
+.edm-cell.is-now {
+  transform: scale(1.12);
+  box-shadow: 0 0 0 2px var(--ym-highlight);
+}
+
+.edm-cell[aria-pressed="true"].is-now {
+  background: var(--ym-highlight);
+  border-color: var(--ym-highlight);
+}
+
+.edm-code {
+  margin: 20px 0 0;
+}
+
+@media (max-width: 768px) {
+  .edm-beat {
+    padding: 16px;
+  }
+
+  .edm-row {
+    grid-template-columns: repeat(8, 1fr);
+    row-gap: 4px;
+  }
+
+  /* スマホでは16マスを8マス×2段に折り返す */
+  .edm-row-label {
+    grid-column: 1 / -1;
+  }
+}

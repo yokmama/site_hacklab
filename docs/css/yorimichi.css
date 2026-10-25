@@ -1,0 +1,617 @@
+/*
+ * よりみち（docs/yorimichi/*.html）の共通スタイル
+ *
+ * ページの <body> に class="page-yorimichi theme-◯◯" を付ける。
+ * 色はテーマごとに css/yorimichi/◯◯.css で --ym-* を上書きする。
+ * そのページだけの部品（体験ウィジェットなど）も同じファイルに書く。
+ */
+.page-yorimichi {
+  --ym-bg: #fbfaf7;
+  --ym-bg-2: #f5f2ec;
+  --ym-panel: #ffffff;
+  --ym-line: #e7e1d8;
+  --ym-accent: #4f9a1c;
+  --ym-accent-glow: #8fe05a;
+  --ym-accent-soft: #f0f9e8;
+  --ym-text: #2b2b2b;
+  --ym-sub: #4a4540;
+  --ym-muted: #6f6862;
+  --ym-chip: #f7f4ef;
+  --ym-highlight: #ffa726;
+  --ym-highlight-text: #c25e00;
+  --ym-shadow: rgba(80, 60, 30, 0.07);
+  --ym-mono: "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+  background-color: var(--ym-bg);
+}
+
+.page-yorimichi main {
+  color: var(--ym-text);
+  background-color: var(--ym-bg);
+}
+
+.page-yorimichi header nav a[aria-current="page"] {
+  color: var(--ym-accent);
+  font-weight: 700;
+}
+
+/* Shared */
+.ym-section {
+  padding: 96px 0;
+  background-image:
+    linear-gradient(var(--ym-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--ym-line) 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-color: var(--ym-bg);
+  background-blend-mode: normal;
+  position: relative;
+}
+
+.ym-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, color-mix(in srgb, var(--ym-bg) 55%, transparent) 0%, var(--ym-bg) 75%);
+  pointer-events: none;
+}
+
+.ym-section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.ym-section:nth-of-type(even) {
+  background-color: var(--ym-bg-2);
+}
+
+.page-yorimichi .ym-section h2 {
+  color: var(--ym-text);
+  line-height: 1.4;
+  margin-bottom: 32px;
+}
+
+.page-yorimichi .ym-section h2::after {
+  background-color: var(--ym-accent);
+  box-shadow: 0 0 12px var(--ym-accent-glow);
+}
+
+.ym-kicker,
+.ym-eyebrow {
+  font-family: var(--ym-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: var(--ym-accent);
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.ym-section-lead {
+  max-width: 760px;
+  margin: 0 auto 48px;
+  text-align: center;
+  color: var(--ym-muted);
+}
+
+.ym-section-lead b,
+.ym-lead b,
+.ym-manifesto-body b,
+.ym-system-card b {
+  color: var(--ym-text);
+}
+
+/* Hero */
+.ym-hero {
+  position: relative;
+  padding: 160px 0 96px;
+  min-height: 640px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--ym-bg);
+  text-align: center;
+}
+
+.ym-hero-bg {
+  position: absolute;
+  inset: 0;
+  /* 画像はページ側で style="background-image: url(...)" を指定する */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+}
+
+.ym-hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--ym-bg) 55%, transparent) 0%, color-mix(in srgb, var(--ym-bg) 88%, transparent) 55%, var(--ym-bg) 100%);
+}
+
+.ym-hero-inner {
+  position: relative;
+}
+
+.ym-hero h1 {
+  font-size: 3.2rem;
+  line-height: 1.25;
+  margin-bottom: 24px;
+  color: var(--ym-text);
+}
+
+.ym-hero .ym-lead {
+  max-width: 820px;
+  margin: 0 auto 40px;
+  font-size: 1.05rem;
+  color: var(--ym-sub);
+}
+
+.ym-hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.ym-hero-stats > div {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--ym-line);
+  border-top: 3px solid var(--ym-accent);
+  border-radius: 8px;
+  padding: 16px 24px;
+  min-width: 170px;
+}
+
+.ym-num {
+  font-family: var(--ym-mono);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--ym-text);
+}
+
+.ym-unit {
+  margin-left: 4px;
+  font-weight: 700;
+}
+
+.ym-hero-stats small {
+  display: block;
+  color: var(--ym-muted);
+  font-size: 0.8rem;
+}
+
+.ym-hero--compact {
+  min-height: 0;
+  padding: 150px 0 24px;
+}
+
+/* Manifesto */
+.ym-manifesto-body {
+  max-width: 760px;
+  margin: 0 auto 56px;
+  text-align: center;
+  color: var(--ym-sub);
+  font-size: 1.05rem;
+}
+
+.ym-manifesto-body p + p {
+  margin-top: 1.2em;
+}
+
+.ym-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.ym-pillar,
+.ym-system-card,
+.ym-qa-item {
+  background: var(--ym-panel);
+  border: 1px solid var(--ym-line);
+  border-radius: 12px;
+  box-shadow: 0 3px 10px var(--ym-shadow);
+  padding: 28px 24px;
+}
+
+.ym-pillar-no {
+  font-family: var(--ym-mono);
+  font-size: 1.6rem;
+  color: var(--ym-accent);
+}
+
+.ym-pillar h3,
+.ym-system-card h3,
+.ym-qa-item h3 {
+  font-size: 1.1rem;
+  margin: 8px 0 12px;
+  color: var(--ym-text);
+}
+
+.ym-pillar p,
+.ym-system-card p,
+.ym-qa-item p {
+  color: var(--ym-muted);
+  font-size: 0.92rem;
+}
+
+/* Curriculum */
+.ym-phase {
+  max-width: 880px;
+  margin: 0 auto 28px;
+}
+
+.ym-phase-head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.ym-phase-head span {
+  font-family: var(--ym-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--ym-accent);
+}
+
+.ym-phase-head h3 {
+  font-size: 1.15rem;
+  color: var(--ym-text);
+}
+
+.ym-phase-head small {
+  color: var(--ym-muted);
+}
+
+.ym-problems {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.ym-problems li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--ym-panel);
+  border: 1px solid var(--ym-line);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.ym-problems li.ym-peak {
+  border-color: color-mix(in srgb, var(--ym-accent) 60%, transparent);
+  box-shadow: inset 3px 0 0 var(--ym-accent);
+}
+
+.ym-pno {
+  font-family: var(--ym-mono);
+  font-size: 1.4rem;
+  color: var(--ym-accent);
+  flex-shrink: 0;
+  width: 2ch;
+}
+
+.ym-problems div {
+  flex: 1;
+}
+
+.ym-problems strong {
+  font-size: 0.98rem;
+  color: var(--ym-text);
+}
+
+.ym-problems p {
+  font-size: 0.82rem;
+  color: var(--ym-muted);
+}
+
+.ym-problems em {
+  font-style: normal;
+  font-size: 0.75rem;
+  color: var(--ym-muted);
+  white-space: nowrap;
+  text-align: right;
+}
+
+.ym-noanswer {
+  display: block;
+  margin-top: 4px;
+  font-weight: 600;
+  color: var(--ym-highlight-text);
+}
+
+/* System */
+.ym-system-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.ym-system-grid .ym-system-card:first-child {
+  grid-row: span 2;
+}
+
+/* Roadmap */
+.ym-figure {
+  max-width: 880px;
+  margin: 0 auto 24px;
+}
+
+.ym-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid var(--ym-line);
+}
+
+.ym-figure figcaption {
+  margin-top: 8px;
+  font-size: 0.82rem;
+  color: var(--ym-muted);
+  text-align: center;
+}
+
+.ym-code {
+  max-width: 880px;
+  margin: 0 auto 56px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--ym-line);
+  background: var(--ym-chip);
+}
+
+.ym-code-head {
+  font-size: 0.78rem;
+  color: var(--ym-muted);
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--ym-line);
+  background: var(--ym-panel);
+}
+
+.ym-code pre {
+  margin: 0;
+  padding: 16px;
+  overflow-x: auto;
+  font-family: var(--ym-mono);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #3a3a3a;
+}
+
+.ym-code .c {
+  color: #9a918a;
+}
+
+.ym-code .s {
+  color: var(--ym-highlight-text);
+}
+
+.ym-steps {
+  list-style: none;
+  max-width: 880px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  counter-reset: none;
+}
+
+.ym-steps li {
+  position: relative;
+  background: var(--ym-panel);
+  border: 1px solid var(--ym-line);
+  border-radius: 10px;
+  padding: 18px 16px;
+}
+
+.ym-steps li.is-here {
+  border-color: var(--ym-accent);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--ym-accent) 35%, transparent);
+}
+
+.ym-steps li.is-here::after {
+  content: 'いまここ';
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: var(--ym-accent);
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.ym-step-no {
+  font-family: var(--ym-mono);
+  font-size: 1.2rem;
+  color: var(--ym-accent);
+}
+
+.ym-steps strong {
+  display: block;
+  margin: 4px 0 6px;
+  color: var(--ym-text);
+  font-size: 0.95rem;
+}
+
+.ym-steps p {
+  font-size: 0.8rem;
+  color: var(--ym-muted);
+}
+
+.ym-roadmap-note {
+  max-width: 880px;
+  margin: 24px auto 0;
+  font-size: 0.8rem;
+  color: var(--ym-muted);
+}
+
+/* 画像とテキストの横並び */
+.ym-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.ym-split img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+.ym-split .ym-code {
+  margin: 16px 0 0;
+}
+
+.ym-split p {
+  color: var(--ym-sub);
+}
+
+/* 外部の教材へのリンク */
+.ym-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.ym-links a {
+  display: block;
+  background: var(--ym-panel);
+  border: 1px solid var(--ym-line);
+  border-radius: 12px;
+  box-shadow: 0 3px 10px var(--ym-shadow);
+  padding: 20px;
+  transition: transform 0.2s ease;
+}
+
+.ym-links a:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.ym-links strong {
+  display: block;
+  color: var(--ym-accent);
+  margin-bottom: 6px;
+}
+
+.ym-links span {
+  font-size: 0.85rem;
+  color: var(--ym-muted);
+}
+
+.ym-links-note {
+  max-width: 880px;
+  margin: 16px auto 0;
+  font-size: 0.8rem;
+  color: var(--ym-muted);
+  text-align: center;
+}
+
+/* Parents */
+.ym-qa {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  gap: 16px;
+}
+
+.ym-qa-item a {
+  color: var(--ym-accent);
+  text-decoration: underline;
+}
+
+/* CTA */
+.page-yorimichi .ym-cta {
+  background: linear-gradient(135deg, var(--ym-accent-soft) 0%, var(--ym-bg) 70%);
+  color: var(--ym-text);
+}
+
+.page-yorimichi .ym-cta h2 {
+  color: var(--ym-text);
+  line-height: 1.4;
+}
+
+.page-yorimichi .ym-cta h2::after {
+  background-color: var(--ym-accent);
+}
+
+.page-yorimichi .ym-cta p {
+  color: var(--ym-sub);
+}
+
+.ym-pc {
+  display: inline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ym-section {
+    padding: 64px 0;
+  }
+
+  .ym-hero {
+    padding: 120px 0 64px;
+    min-height: 0;
+  }
+
+  .ym-hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .ym-hero--compact {
+    padding: 120px 0 48px;
+  }
+
+  .ym-hero .ym-lead {
+    font-size: 0.95rem;
+  }
+
+  .ym-hero .ym-lead br,
+  .ym-section-lead br {
+    display: none;
+  }
+
+  .ym-hero-stats > div {
+    min-width: 0;
+    flex: 1 1 140px;
+    padding: 12px 14px;
+  }
+
+  .page-yorimichi .ym-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .ym-pillars,
+  .ym-system-grid,
+  .ym-problems,
+  .ym-split {
+    grid-template-columns: 1fr;
+  }
+
+  .ym-system-grid .ym-system-card:first-child {
+    grid-row: auto;
+  }
+
+  .ym-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-yorimichi * {
+    transition: none !important;
+  }
+}

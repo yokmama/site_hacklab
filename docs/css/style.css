@@ -449,11 +449,8 @@ footer p {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-  
+/* ナビ項目が多いため、タブレット幅からハンバーガーメニューに切り替える */
+@media (max-width: 1100px) {
   .hamburger {
     display: flex;
     position: absolute;
@@ -502,129 +499,7 @@ footer p {
 
   header .container {
     justify-content: center;
-  }
-
-  .logo-img {
-    height: 100px; /* Reduce logo size on mobile */
-  }
-  
-  .logo-link {
-    /* Keep it top-left but ensure it doesn't block too much content */
-    padding-right: 10px;
-    padding-bottom: 5px;
-  }
-
-  .slot-picker-container {
-    gap: 8px;
-  }
-
-  .slot-btn {
-    width: calc(50% - 4px);
-    min-height: 44px;
-    font-size: 0.85rem;
-    padding: 8px 10px;
-  }
-
-  .slot-guidance {
-    text-align: center;
-  }
-
-  /* Course Cards - Mobile (T016) */
-  .course-cards {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .course-card-header h3 {
-    font-size: 1.3rem;
-  }
-
-  .course-card-meta {
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .course-card-body {
-    padding: 16px;
-  }
-
-  .course-card--small {
-    max-width: 100%;
-  }
-
-  /* Step Flow - Mobile (T017) */
-  .step-flow {
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-  }
-
-  .step-item {
-    flex-direction: row;
-    max-width: 100%;
-    width: 100%;
-    gap: 12px;
-    text-align: left;
-  }
-
-  .step-number {
-    width: 36px;
-    height: 36px;
-    flex-shrink: 0;
-  }
-
-  .step-title {
-    font-size: 0.85rem;
-  }
-
-  .step-title br {
-    display: none;
-  }
-
-  .step-arrow {
-    transform: rotate(90deg);
-    padding: 0;
-    font-size: 1rem;
-  }
-
-  /* Course Path - Mobile (T018) */
-  .course-path {
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-    margin-bottom: 30px;
-  }
-
-  .course-path-item {
-    max-width: 100%;
-    width: 100%;
-  }
-
-  .course-path-arrow {
-    transform: rotate(90deg);
-    padding: 8px 0;
-    font-size: 1.2rem;
-  }
-
-  .course-path-note {
-    font-size: 0.85rem;
-    margin-bottom: 24px;
-  }
-
-  /* Course Tags - Mobile */
-  .course-tags {
-    justify-content: center;
-  }
-
-  /* Minecraft Day Gallery & Workshop - Mobile */
-  #minecraftday .features-grid,
-  #minecraftday [style*="grid-template-columns: repeat(3"] {
-    grid-template-columns: 1fr !important;
-  }
-
-  /* Growth System - Mobile */
-  #system [style*="grid-template-columns: repeat(2"] {
-    grid-template-columns: 1fr !important;
+    min-height: 32px;
   }
 }
 
@@ -1081,5 +956,333 @@ footer p {
   .track-record-cards {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+}
+
+/* よりみち: 一覧カード（index.html / yorimichi/index.html、js/yorimichi.js が描画） */
+.yorimichi-section {
+  background-color: #fbfaf7;
+}
+
+.yorimichi-kicker {
+  font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: var(--color-minecraft-green);
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.yorimichi-lead {
+  max-width: 720px;
+  margin: -20px auto 40px;
+  text-align: center;
+  color: var(--color-text-light);
+}
+
+.yorimichi-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 340px));
+  justify-content: center;
+  gap: 24px;
+}
+
+@media (max-width: 640px) {
+  .yorimichi-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.yorimichi-card {
+  --yorimichi-accent: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  border-top: 4px solid var(--yorimichi-accent);
+  box-shadow: 0 4px 14px rgba(80, 60, 30, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+a.yorimichi-card:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(80, 60, 30, 0.12);
+}
+
+.yorimichi-card-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  background: #f3f0ea;
+}
+
+.yorimichi-card-body {
+  padding: 20px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.yorimichi-card-tool {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--yorimichi-accent);
+}
+
+.yorimichi-card-title {
+  font-size: 1.25rem;
+}
+
+.yorimichi-card-catch {
+  font-weight: 600;
+}
+
+.yorimichi-card-summary {
+  font-size: 0.88rem;
+  color: var(--color-text-light);
+  flex: 1;
+}
+
+.yorimichi-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.yorimichi-card-tags span {
+  font-size: 0.75rem;
+  padding: 2px 10px;
+  border-radius: 20px;
+  background: #f3f0ea;
+  color: var(--color-text-light);
+}
+
+.yorimichi-card-tags .is-coming-badge,
+.yorimichi-chip.is-coming span {
+  background: #eee;
+  color: #888;
+}
+
+.yorimichi-card.is-coming {
+  opacity: 0.7;
+}
+
+.yorimichi-more {
+  text-align: center;
+  margin-top: 32px;
+}
+
+/* よりみち: コースカード内の分岐（ステップ図の下） */
+.yorimichi-branch {
+  position: relative;
+  margin: 28px 0 24px;
+  padding: 16px 20px;
+  border-radius: 10px;
+  background: #fbfaf7;
+  border: 1px dashed #cfc6b8;
+}
+
+/* ステップ図の「＋よりみち」（よりみちを行う章の下に付ける） */
+.step-yorimichi {
+  margin-top: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--color-minecraft-green);
+  border: 1px dashed var(--color-minecraft-green);
+  border-radius: 10px;
+  padding: 1px 8px;
+  white-space: nowrap;
+}
+
+.yorimichi-branch-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.yorimichi-branch-head strong {
+  font-size: 1rem;
+}
+
+.yorimichi-branch-head a {
+  font-size: 0.8rem;
+  color: var(--color-tech-blue);
+  text-decoration: underline;
+  white-space: nowrap;
+}
+
+.yorimichi-branch > p {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  margin-bottom: 12px;
+}
+
+.yorimichi-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.yorimichi-chip {
+  --yorimichi-accent: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #fff;
+  border-left: 4px solid var(--yorimichi-accent);
+  box-shadow: 0 2px 6px rgba(80, 60, 30, 0.08);
+  min-width: 160px;
+}
+
+.yorimichi-chip strong {
+  font-size: 0.92rem;
+}
+
+.yorimichi-chip span {
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+}
+
+@media (max-width: 768px) {
+  .yorimichi-chip {
+    flex: 1 1 100%;
+  }
+}
+
+/* スマホ向けの上書き。通常のルールより後ろに置かないと効かないため、ファイルの最後に置く */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .logo-img {
+    height: 100px; /* Reduce logo size on mobile */
+  }
+  
+  .logo-link {
+    /* Keep it top-left but ensure it doesn't block too much content */
+    padding-right: 10px;
+    padding-bottom: 5px;
+  }
+
+  .slot-picker-container {
+    gap: 8px;
+  }
+
+  .slot-btn {
+    width: calc(50% - 4px);
+    min-height: 44px;
+    font-size: 0.85rem;
+    padding: 8px 10px;
+  }
+
+  .slot-guidance {
+    text-align: center;
+  }
+
+  /* Course Cards - Mobile (T016) */
+  .course-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .course-card-header h3 {
+    font-size: 1.3rem;
+  }
+
+  .course-card-meta {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .course-card-body {
+    padding: 16px;
+  }
+
+  .course-card--small {
+    max-width: 100%;
+  }
+
+  /* Step Flow - Mobile (T017) */
+  .step-flow {
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .step-item {
+    flex-direction: row;
+    max-width: 100%;
+    width: 100%;
+    gap: 12px;
+    text-align: left;
+  }
+
+  .step-number {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+  }
+
+  .step-title {
+    font-size: 0.85rem;
+  }
+
+  .step-title br {
+    display: none;
+  }
+
+  .step-arrow {
+    transform: rotate(90deg);
+    padding: 0;
+    font-size: 1rem;
+  }
+
+  /* Course Path - Mobile (T018) */
+  .course-path {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 30px;
+  }
+
+  .course-path-item {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .course-path-arrow {
+    transform: rotate(90deg);
+    padding: 8px 0;
+    font-size: 1.2rem;
+  }
+
+  .course-path-note {
+    font-size: 0.85rem;
+    margin-bottom: 24px;
+  }
+
+  /* Course Tags - Mobile */
+  .course-tags {
+    justify-content: center;
+  }
+
+  /* Minecraft Day Gallery & Workshop - Mobile */
+  #minecraftday .features-grid,
+  #minecraftday [style*="grid-template-columns: repeat(3"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Growth System - Mobile */
+  #system [style*="grid-template-columns: repeat(2"] {
+    grid-template-columns: 1fr !important;
   }
 }

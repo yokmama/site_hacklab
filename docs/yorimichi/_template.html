@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!--
+  よりみちページの雛形。手順は README.md を参照。
+  「◯◯」と「xxx」を書きかえて、yorimichi/xxx.html として保存する。
+  使わないセクションは消してよい。
+-->
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>◯◯を学ぼう — よりみち | キッズプログラミングスクール8x9 東京校</title>
+    <meta name="description" content="◯◯（ページの説明を1〜2文で）">
+    <!-- OGP -->
+    <meta property="og:title" content="◯◯を学ぼう | 8x9 東京校">
+    <meta property="og:description" content="◯◯（SNSで共有されたときの説明）">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://school.0x48lab.com/yorimichi/xxx.html">
+    <meta property="og:image" content="https://school.0x48lab.com/images/yorimichi/xxx/web_main.jpg">
+    <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://school.0x48lab.com/yorimichi/xxx.html">
+    <!-- Favicon -->
+    <link rel="icon" href="../images/89logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="../images/89logo.png">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/yorimichi.css">
+    <link rel="stylesheet" href="../css/yorimichi/xxx.css">
+</head>
+<body class="page-yorimichi theme-xxx">
+
+    <header>
+        <a href="../index.html" class="logo-link"><img src="../images/89logo_tokyo.png" alt="キッズプログラミングスクール8x9 東京校" class="logo-img"></a>
+        <div class="container">
+            <button class="hamburger" aria-label="メニューを開く" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="../index.html#about">スクールについて</a></li>
+                    <li><a href="../index.html#curriculum">カリキュラム</a></li>
+                    <li><a href="./" aria-current="page">よりみち</a></li>
+                    <li><a href="../index.html#price">料金</a></li>
+                    <li><a href="../index.html#schedule">スケジュール</a></li>
+                    <li><a href="../index.html#faq">Q&A</a></li>
+                    <li><a href="../trial.html" class="header-cta">体験レッスン</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero: 背景画像は style で指定 -->
+        <section class="ym-hero">
+            <div class="ym-hero-bg" style="background-image: url('../images/yorimichi/xxx/web_main.jpg');" aria-hidden="true"></div>
+            <div class="container ym-hero-inner">
+                <p class="ym-eyebrow">よりみち ／ ◯◯を学ぼう</p>
+                <h1>◯◯（キャッチコピー）</h1>
+                <p class="ym-lead">◯◯（何をして、何に触れるのか）</p>
+                <div class="ym-hero-stats">
+                    <div><span class="ym-num">00</span><span class="ym-unit">問</span><small>◯◯</small></div>
+                    <div><span class="ym-num">00</span><span class="ym-unit">分</span><small>◯◯</small></div>
+                </div>
+                <a href="../trial.html" class="btn btn-primary">無料体験レッスンに申込む</a>
+            </div>
+        </section>
+
+        <!-- なぜこれを学ぶのか -->
+        <section class="ym-section">
+            <div class="container">
+                <p class="ym-kicker">WHY</p>
+                <h2>◯◯</h2>
+                <div class="ym-manifesto-body">
+                    <p>◯◯</p>
+                </div>
+                <div class="ym-pillars">
+                    <div class="ym-pillar"><span class="ym-pillar-no">01</span><h3>◯◯</h3><p>◯◯</p></div>
+                    <div class="ym-pillar"><span class="ym-pillar-no">02</span><h3>◯◯</h3><p>◯◯</p></div>
+                    <div class="ym-pillar"><span class="ym-pillar-no">03</span><h3>◯◯</h3><p>◯◯</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- カリキュラム: ym-phase を必要なだけ並べる。山場は li に ym-peak -->
+        <section class="ym-section">
+            <div class="container">
+                <p class="ym-kicker">CURRICULUM</p>
+                <h2>◯◯</h2>
+                <div class="ym-phase">
+                    <div class="ym-phase-head"><span>PHASE 1</span><h3>◯◯</h3><small>◯◯</small></div>
+                    <ol class="ym-problems">
+                        <li><span class="ym-pno">01</span><div><strong>◯◯</strong><p>◯◯</p></div><em>◯◯・5分</em></li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- その先の道筋: 今の位置の li に is-here -->
+        <section class="ym-section">
+            <div class="container">
+                <p class="ym-kicker">BEYOND</p>
+                <h2>◯◯</h2>
+                <ol class="ym-steps">
+                    <li class="is-here"><span class="ym-step-no">1</span><div><strong>◯◯</strong><p>◯◯</p></div></li>
+                    <li><span class="ym-step-no">2</span><div><strong>◯◯</strong><p>◯◯</p></div></li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 保護者の方へ -->
+        <section class="ym-section">
+            <div class="container">
+                <p class="ym-kicker">FOR PARENTS</p>
+                <h2>保護者の方へ</h2>
+                <div class="ym-qa">
+                    <div class="ym-qa-item"><h3>◯◯</h3><p>◯◯</p></div>
+                    <div class="ym-qa-item">
+                        <h3>どのコースで受けられますか？</h3>
+                        <p><a href="../index.html#course-minecraft-ai">マイクラAIコース</a>の第2章「マイクラのAIワールドで学ぶ」（5〜8か月）の中で、「よりみち」として取り組みます（PC・教材込み、追加料金なし）。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ほかのよりみち: data-exclude に自分の id -->
+        <section class="ym-section">
+            <div class="container">
+                <p class="ym-kicker">MORE YORIMICHI</p>
+                <h2>ほかの よりみち</h2>
+                <div class="yorimichi-cards" data-yorimichi-list data-variant="card" data-base="../" data-exclude="xxx"></div>
+                <p class="yorimichi-more"><a href="./" class="btn btn-primary">よりみち一覧へ</a></p>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="contact-section ym-cta">
+            <div class="container" style="text-align: center;">
+                <h2>◯◯</h2>
+                <p>◯◯</p>
+                <a href="../trial.html" class="btn btn-primary" style="margin-top: 20px; font-size: 1.2rem; padding: 16px 40px;">無料体験レッスンに申込む</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div style="margin-bottom: 16px;">
+                <a href="https://www.instagram.com/8x9tokyo/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; color: white; opacity: 0.9; transition: opacity 0.3s ease;">
+                    <img src="../images/instagram-glyph.png" alt="Instagram" style="width: 24px; height: 24px; filter: brightness(10);">
+                    <span style="font-size: 0.95rem; font-weight: 500;">@8x9tokyo</span>
+                </a>
+            </div>
+            <p>&copy; 2026 Kids Programming School 8x9 Tokyo. All Rights Reserved.</p>
+            <p style="font-size: 0.8rem; margin-top: 10px;"><a href="https://8x9.jp/" target="_blank" style="text-decoration: underline; color: #aaa;">8x9 本家サイト（神戸・大阪）はこちら</a></p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/yorimichi.js"></script>
+    <!-- 体験ウィジェットがあれば: <script src="../js/yorimichi/xxx.js"></script> -->
+</body>
+</html>
