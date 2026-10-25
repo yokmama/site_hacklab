@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const base = lists[0].dataset.base || '';
 
-    fetch(base + 'data/yorimichi.json')
+    // 一覧を足したらすぐ反映されるよう、キャッシュを使わない（calendar.js と同じ）
+    fetch(base + 'data/yorimichi.json?v=' + new Date().getTime())
         .then((response) => {
             if (!response.ok) throw new Error('HTTP ' + response.status);
             return response.json();
