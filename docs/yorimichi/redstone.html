@@ -20,7 +20,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/style.css?v=20261025">
     <link rel="stylesheet" href="../css/yorimichi.css?v=20261025">
-    <link rel="stylesheet" href="../css/yorimichi/redstone.css?v=20261025">
+    <link rel="stylesheet" href="../css/yorimichi/redstone.css?v=20261029">
 </head>
 <body class="page-yorimichi theme-redstone">
 
@@ -260,7 +260,8 @@
                 <h2>マイクラの回路は、本物の半導体につながっている。</h2>
                 <p class="ym-section-lead">
                     レッドストーンラボはゴールではなく入口です。<br>
-                    8x9東京が見据えているのは、マイクラで覚えた論理回路が、実際の半導体設計の流れへそのままつながっていく道筋です。
+                    8x9東京では、マイクラの中で「回路を手で組む」から「回路をプログラムで生成する」までに取り組みます。<br>
+                    その先には、実際の半導体設計の世界が続いています。
                 </p>
 
                 <figure class="ym-figure">
@@ -282,17 +283,42 @@ const or4_0 = [
 ]</code></pre>
                 </div>
 
-                <ol class="ym-steps">
-                    <li class="is-here"><span class="ym-step-no">1</span><div><strong>マイクラで論理回路</strong><p>レッドストーンラボの16問。トーチ = トランジスタで NOT から加算器まで。</p></div></li>
-                    <li><span class="ym-step-no">2</span><div><strong>マイクラで計算機</strong><p>回路をプログラムで自動レイアウト。手では置ききれない規模へ。</p></div></li>
-                    <li><span class="ym-step-no">3</span><div><strong>ハードウェア記述言語</strong><p>Verilog などで回路を「コード」として書き、論理合成する。</p></div></li>
-                    <li><span class="ym-step-no">4</span><div><strong>シミュレーション</strong><p>波形を見ながら、書いた回路が正しく動くか検証する。</p></div></li>
-                    <li><span class="ym-step-no">5</span><div><strong>レイアウト</strong><p>オープンソースの設計ツールと PDK で、チップの配置・配線まで。</p></div></li>
-                    <li><span class="ym-step-no">6</span><div><strong>シャトルで製造</strong><p>複数の設計を1枚のウェハに相乗りさせる仕組みで、本物のチップに。</p></div></li>
-                    <li><span class="ym-step-no">7</span><div><strong>基板に載せて動かす</strong><p>PCBに載せ、自分の設計したチップで数字を光らせる。</p></div></li>
-                    <li><span class="ym-step-no">8</span><div><strong>発表する</strong><p>作ったものを、自分の言葉で世の中に発信する。</p></div></li>
-                </ol>
-                <p class="ym-roadmap-note">※ 2〜8は、レッドストーンラボの先に8x9東京が描いている学びの道筋です。取り組む内容はお子さまの興味と習熟度に合わせて講師と相談しながら進めます。</p>
+                <div class="rs-road">
+                    <h3 class="rs-road-title"><span class="rs-road-tag">8x9東京で取り組むこと</span>マイクラの中で、回路を組む・つくる</h3>
+                    <ol class="ym-steps rs-road-steps">
+                        <li class="is-here"><span class="ym-step-no">1</span><div><strong>マイクラで論理回路</strong><p>レッドストーンラボの16問。トーチ = トランジスタで NOT から加算器まで、手で組み上げる。</p></div></li>
+                        <li><span class="ym-step-no">2</span><div><strong>プログラムで回路を生成</strong><p>hackCraft2 で JavaScript / Python を使い、回路をコードから自動で建てる。手では置ききれない規模へ。</p></div></li>
+                    </ol>
+                </div>
+
+                <div class="rs-road rs-road-beyond">
+                    <h3 class="rs-road-title"><span class="rs-road-tag">この先にある世界</span>大学や開発の現場で行われている、半導体設計の流れ</h3>
+                    <ol class="ym-steps">
+                        <li><span class="ym-step-no">3</span><div><strong>ハードウェア記述言語</strong><p>Verilog などで回路の「動き」をコードとして書き、ツールが論理回路に変換（論理合成）する。</p></div></li>
+                        <li><span class="ym-step-no">4</span><div><strong>シミュレーション</strong><p>波形を見ながら、書いた回路が正しく動くか検証する。</p></div></li>
+                        <li><span class="ym-step-no">5</span><div><strong>レイアウト</strong><p>設計ツールと PDK（製造ルール集）で、チップ上の配置・配線を決める。</p></div></li>
+                        <li><span class="ym-step-no">6</span><div><strong>製造と動作確認</strong><p>工場でチップをつくり、基板に載せて動かす。複数の設計を1枚のウェハに相乗りさせる仕組みもある。</p></div></li>
+                    </ol>
+                </div>
+                <p class="ym-roadmap-note">※ 3〜6は8x9東京のカリキュラムには含まれません。マイクラで身につけた考え方が、本物の半導体設計のどこにつながっているかを示すためのものです。</p>
+
+                <div class="rs-bridge">
+                    <h3 class="rs-bridge-title">マイクラで身につけたことは、本物の設計のここにつながる</h3>
+                    <table class="rs-bridge-table">
+                        <thead>
+                            <tr><th scope="col">マイクラで取り組むこと</th><th scope="col">本物の半導体設計では</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>トーチ1つで NOT、3つで AND<small>レッドストーンラボ 問題3・8</small></td><td>トランジスタを組み合わせて論理ゲートをつくる</td></tr>
+                            <tr><td>入力の全パターンで回路を自動検査<small>レッドストーンラボの検査ボタン</small></td><td>テストベンチ（検査用プログラム）による検証</td></tr>
+                            <tr><td>RSラッチで1ビットを覚える<small>レッドストーンラボ 問題12</small></td><td>フリップフロップ・メモリ</td></tr>
+                            <tr><td>リピーターの遅れと、ピカピカ光るクロック<small>レッドストーンラボ 問題2・13</small></td><td>信号が伝わる遅れ（伝搬遅延）と、クロックにあわせて動く回路</td></tr>
+                            <tr><td>全加算器を組み合わせて2ビット加算器に<small>レッドストーンラボ 問題15・16</small></td><td>小さな部品を組み合わせて大きな回路にする階層設計</td></tr>
+                            <tr><td>回路の部品をコードで定義し、プログラムで建てる<small>hackCraft2</small></td><td>Chisel や Amaranth（Python）のように、プログラムで回路を生成する設計言語</td></tr>
+                        </tbody>
+                    </table>
+                    <p class="rs-bridge-gap"><b>まだ大きな一歩が残っているところ</b>本物の設計では、部品の位置を自分で決めるのではなく「どんな動きをする回路か」を書き、配置や配線は設計ツールが自動で行います。マイクラ特有のしくみ（ゲーム内の時間の単位など）も持ち越せません。この「動きを書いて、形はツールにまかせる」への切り替えが、マイクラの次に越える壁です。</p>
+                </div>
             </div>
         </section>
 

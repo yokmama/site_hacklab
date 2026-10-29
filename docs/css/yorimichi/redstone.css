@@ -198,6 +198,117 @@
   font-size: 0.78rem;
 }
 
+/* ロードマップ（取り組むこと／この先の世界）と対応表 */
+.rs-road {
+  max-width: 880px;
+  margin: 0 auto 28px;
+}
+
+.rs-road-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin-bottom: 18px;
+  font-size: 1.05rem;
+  color: var(--ym-text);
+}
+
+.rs-road-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: var(--ym-accent);
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 10px;
+}
+
+.rs-road-steps {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.rs-road-beyond .rs-road-tag {
+  background: transparent;
+  color: var(--ym-muted);
+  border: 1px dashed var(--ym-muted);
+}
+
+.rs-road-beyond .ym-steps li {
+  background: transparent;
+  border-style: dashed;
+}
+
+.rs-road-beyond .ym-step-no {
+  color: var(--ym-muted);
+}
+
+.rs-bridge {
+  max-width: 880px;
+  margin: 48px auto 0;
+}
+
+.rs-bridge-title {
+  margin-bottom: 18px;
+  font-size: 1.05rem;
+  text-align: center;
+  color: var(--ym-text);
+}
+
+.rs-bridge-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--ym-panel);
+  border: 1px solid var(--ym-line);
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 0.9rem;
+}
+
+.rs-bridge-table th,
+.rs-bridge-table td {
+  padding: 14px 16px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--ym-line);
+}
+
+.rs-bridge-table th {
+  background: var(--ym-chip);
+  font-size: 0.8rem;
+  color: var(--ym-muted);
+}
+
+.rs-bridge-table td:first-child {
+  width: 50%;
+  color: var(--ym-text);
+}
+
+.rs-bridge-table td small {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.75rem;
+  color: var(--ym-muted);
+}
+
+.rs-bridge-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.rs-bridge-gap {
+  margin-top: 18px;
+  padding: 16px 18px;
+  border-left: 3px solid var(--ym-accent);
+  background: var(--ym-accent-soft);
+  border-radius: 0 10px 10px 0;
+  font-size: 0.85rem;
+  color: var(--ym-text);
+}
+
+.rs-bridge-gap b {
+  display: block;
+  margin-bottom: 4px;
+}
+
 @media (max-width: 768px) {
   .rs-lab {
     grid-template-columns: 1fr;
@@ -210,5 +321,43 @@
 
   .rs-adder-eq {
     font-size: 1.5rem;
+  }
+
+  .rs-road-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .rs-bridge-table thead {
+    display: none;
+  }
+
+  .rs-bridge-table tr,
+  .rs-bridge-table td {
+    display: block;
+    width: auto;
+  }
+
+  .rs-bridge-table tr {
+    border-bottom: 1px solid var(--ym-line);
+  }
+
+  .rs-bridge-table tbody tr:last-child {
+    border-bottom: none;
+  }
+
+  .rs-bridge-table td {
+    border-bottom: none;
+    padding: 10px 14px;
+  }
+
+  .rs-bridge-table td:first-child {
+    width: auto;
+    padding-bottom: 0;
+  }
+
+  .rs-bridge-table td:last-child::before {
+    content: '→ ';
+    color: var(--ym-accent);
+    font-weight: 700;
   }
 }
