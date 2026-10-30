@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "title": "【東京・目白】マイクラデイ【11/29】",
+    "start": "2026-11-29T04:30:00.000Z",
+    "end": "2026-11-29T07:00:00.000Z",
+    "url": "https://minecraft-day.doorkeeper.jp/events/200220",
+    "color": "#3788d8",
+    "description": ""
+  },
+  {
+    "title": "ロブロックスデイ #3",
+    "start": "2026-11-15T04:30:00.000Z",
+    "end": "2026-11-15T07:00:00.000Z",
+    "url": "https://8x9lab.doorkeeper.jp/events/200221",
+    "color": "#3788d8",
+    "description": ""
+  }
+]
