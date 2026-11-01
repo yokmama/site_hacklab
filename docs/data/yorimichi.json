@@ -8,7 +8,7 @@
       "name": "レッドストーンラボ",
       "tool": "Minecraft レッドストーン",
       "catch": "トーチ1本から、半導体チップへ。",
-      "summary": "レッドストーントーチはトランジスタと同じ働きをする部品。NOT・AND・XORから2ビットの足し算機まで、16の問題を自分の手で組み上げます。",
+      "summary": "レッドストーントーチはトランジスタと同じ働きをする部品。初級は2ビットの足し算機まで手で組み上げ、中級はJavaScriptで回路を生成してCPUまでつくります。",
       "tags": ["論理回路", "2進数", "メモリ"],
       "url": "yorimichi/redstone.html",
       "image": "images/yorimichi/redstone/web_matrix_wide.jpg",
