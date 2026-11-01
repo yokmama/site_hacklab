@@ -11,8 +11,8 @@
       "summary": "レッドストーントーチはトランジスタと同じ働きをする部品。NOT・AND・XORから2ビットの足し算機まで、16の問題を自分の手で組み上げます。",
       "tags": ["論理回路", "2進数", "メモリ"],
       "url": "yorimichi/redstone.html",
-      "image": "images/yorimichi/redstone/web_calculator.jpg",
-      "imageAlt": "マインクラフト内に建てたレッドストーンの計算回路と7セグメント表示",
+      "image": "images/yorimichi/redstone/web_matrix_wide.jpg",
+      "imageAlt": "マインクラフト内に建てた巨大なレッドストーン回路と8×8のランプ表示",
       "accent": "#d63a2f"
     },
     {
