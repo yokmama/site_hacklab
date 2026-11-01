@@ -361,3 +361,11 @@
     font-weight: 700;
   }
 }
+
+/* 範囲や「枝」を入れる番号（13–16、枝1・7 など） */
+.ym-pno.rs-pno-wide {
+  width: auto;
+  min-width: 2ch;
+  font-size: 1.05rem;
+  white-space: nowrap;
+}

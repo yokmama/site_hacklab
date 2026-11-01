@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>半導体を学ぼう（レッドストーンラボ）— よりみち | キッズプログラミングスクール8x9 東京校</title>
-    <meta name="description" content="マインクラフトのレッドストーントーチをトランジスタに見立て、NOT・AND・XORから足し算機（半導体チップ）まで16の問題で子ども自身が組み上げる、8x9東京校独自のカリキュラム。">
+    <meta name="description" content="マインクラフトのレッドストーントーチをトランジスタに見立て、NOT・AND・XORから足し算機まで手で組む初級（22ステップ）と、JavaScriptで回路を生成してCPUまで組み上げる中級（28ステップ）。8x9東京校独自のカリキュラム。">
     <!-- OGP -->
     <meta property="og:title" content="半導体を学ぼう（レッドストーンラボ）| 8x9 東京校">
-    <meta property="og:description" content="トーチ1本から、半導体チップへ。マイクラのレッドストーンで、コンピュータのいちばん奥のしくみを学ぶ16問。">
+    <meta property="og:description" content="トーチ1本から、半導体チップへ。マイクラのレッドストーンで、コンピュータのいちばん奥のしくみを学ぶ。手で組む初級から、プログラムでCPUまで組む中級へ。">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://school.0x48lab.com/yorimichi/redstone.html">
     <meta property="og:image" content="https://school.0x48lab.com/images/yorimichi/redstone/web_matrix_wide.jpg">
@@ -53,13 +53,13 @@
                 <h1>トーチ1本から、<br>半導体チップへ。</h1>
                 <p class="ym-lead">
                     マインクラフトのレッドストーントーチは、<b>トランジスタと同じ働き</b>をする部品です。<br>
-                    電気の道からはじめて NOT・AND・XOR、そして<b>2ビットの足し算機</b>まで。<br>
-                    16の問題を、子ども自身の手で組み上げます。
+                    初級は、電気の道からはじめて NOT・AND・XOR、そして<b>2ビットの足し算機</b>まで、子ども自身の手で組み上げます。<br>
+                    中級は、JavaScript で回路をプログラムから生成し、<b>CPU</b>まで組み上げます。
                 </p>
                 <div class="ym-hero-stats">
-                    <div><span class="ym-num">16</span><span class="ym-unit">問</span><small>ステップ式の問題</small></div>
-                    <div><span class="ym-num">約190</span><span class="ym-unit">分</span><small>5コマ前後で完走</small></div>
-                    <div><span class="ym-num">1</span><span class="ym-unit">人1ワールド</span><small>自分専用の実験場</small></div>
+                    <div><span class="ym-num">22</span><span class="ym-unit">ステップ</span><small>初級：手で組む</small></div>
+                    <div><span class="ym-num">28</span><span class="ym-unit">ステップ</span><small>中級：JavaScriptで組む</small></div>
+                    <div><span class="ym-num">CPU</span><span class="ym-unit">まで</span><small>中級のゴール</small></div>
                 </div>
                 <a href="../trial.html" class="btn btn-primary">無料体験レッスンに申込む</a>
             </div>
@@ -95,7 +95,7 @@
                     <div class="ym-pillar">
                         <span class="ym-pillar-no">02</span>
                         <h3>自分で組む</h3>
-                        <p>お手本を写すのではなく、問題文と合格条件だけを見て自分で設計。最後の2問はお手本すら用意していません。</p>
+                        <p>お手本を写すのではなく、問題文と合格条件だけを見て自分で設計。中級では、同じ部品をプログラムでいくつも並べ、手では置ききれない大きさの回路に挑みます。</p>
                     </div>
                     <div class="ym-pillar">
                         <span class="ym-pillar-no">03</span>
@@ -162,59 +162,56 @@
             </div>
         </section>
 
-        <!-- Curriculum -->
+        <!-- Curriculum: basic -->
         <section class="ym-section ym-curriculum" id="lab-curriculum">
             <div class="container">
-                <p class="ym-kicker">CURRICULUM</p>
-                <h2>16問で、足し算機まで。</h2>
+                <p class="ym-kicker">CURRICULUM 1 ／ 初級</p>
+                <h2>マイクラで半導体を作ろう<br>— 22ステップで、足し算機まで。</h2>
                 <p class="ym-section-lead">
-                    難しい問題の前には、その部品になる技能が必ず1問ずつ先に出てきます。<br>
-                    XORで手が止まる子が多かったから「線を分ける・交差させる・トーチの置き方」を独立した問題にしました。
+                    レッドストーンを手で置いて、回路を組み上げます。難しい問題の前には、その部品になる技能が必ず先に出てきます。<br>
+                    XORで手が止まる子が多かったから「線を分ける・交差させる・トーチの置き方」を独立したステップにしました。<br>
+                    XORのあとは、同じ回路を少ないトーチで組み直す「しょうりゃく」で、設計の工夫を学びます。
                 </p>
 
                 <div class="ym-phase">
-                    <div class="ym-phase-head"><span>PHASE 1</span><h3>電気とトランジスタ</h3><small>問題 1〜6 ／ 約40分</small></div>
+                    <div class="ym-phase-head"><span>PHASE 1</span><h3>電気とトランジスタ</h3><small>ステップ 1〜6</small></div>
                     <ol class="ym-problems">
-                        <li><span class="ym-pno">01</span><div><strong>でんきを とおせ</strong><p>レッドストーンは電気の道</p></div><em>基礎・5分</em></li>
-                        <li><span class="ym-pno">02</span><div><strong>とおくへ とどけ</strong><p>信号には強さがある。リピーターで元気に</p></div><em>基礎・7分</em></li>
-                        <li><span class="ym-pno">03</span><div><strong>ぎゃくに しろ — NOT</strong><p>トーチ = トランジスタ</p></div><em>ゲート・8分</em></li>
-                        <li><span class="ym-pno">04</span><div><strong>うえの トーチ</strong><p>置き方で、電気の出る高さが変わる</p></div><em>ゲート・8分</em></li>
-                        <li><span class="ym-pno">05</span><div><strong>どちらかで つく — OR</strong><p>線を合流させる。はじめての真理値表</p></div><em>配線・5分</em></li>
-                        <li><span class="ym-pno">06</span><div><strong>ふたつに わけろ</strong><p>1本の線を2本に分岐</p></div><em>配線・5分</em></li>
+                        <li><span class="ym-pno">01</span><div><strong>でんきを とおせ</strong><p>レッドストーンは電気の道</p></div><em>基礎</em></li>
+                        <li><span class="ym-pno">03</span><div><strong>ぎゃくに しろ — NOT</strong><p>トーチ = トランジスタ</p></div><em>ゲート</em></li>
                     </ol>
                 </div>
 
                 <div class="ym-phase">
-                    <div class="ym-phase-head"><span>PHASE 2</span><h3>配線とゲート</h3><small>問題 7〜9 ／ 約30分</small></div>
+                    <div class="ym-phase-head"><span>PHASE 2</span><h3>配線とゲート</h3><small>ステップ 7〜12</small></div>
                     <ol class="ym-problems">
-                        <li><span class="ym-pno">07</span><div><strong>いれかえろ — 線の交差</strong><p>混ざらずに越える「橋」をかける</p></div><em>配線・12分</em></li>
-                        <li><span class="ym-pno">08</span><div><strong>りょうほうで つく — AND</strong><p>トーチ3つで1つのゲート。CPUの中も同じ</p></div><em>ゲート・12分</em></li>
-                        <li><span class="ym-pno">09</span><div><strong>AND の ぎゃく — NAND</strong><p>回路の出口を次の入口へ。これでどんな回路も作れる</p></div><em>ゲート・6分</em></li>
+                        <li><span class="ym-pno">07</span><div><strong>いれかえろ — 線の交差</strong><p>混ざらずに越える「橋」をかける</p></div><em>配線</em></li>
+                        <li><span class="ym-pno">10</span><div><strong>りょうほうで つく — AND</strong><p>トーチ3つで1つのゲート。CPUの中も同じ</p></div><em>ゲート</em></li>
+                        <li class="ym-peak"><span class="ym-pno">12</span><div><strong>どちらか だけ — XOR</strong><p>分岐・交差・AND・NANDを全部使う前半の山場</p></div><em>合成</em></li>
                     </ol>
                 </div>
 
                 <div class="ym-phase">
-                    <div class="ym-phase-head"><span>PHASE 3</span><h3>XORと半加算器</h3><small>問題 10〜11 ／ 約30分</small></div>
+                    <div class="ym-phase-head"><span>PHASE 3</span><h3>しょうりゃく — 回路を小さくする</h3><small>ステップ 13〜16</small></div>
                     <ol class="ym-problems">
-                        <li class="ym-peak"><span class="ym-pno">10</span><div><strong>どちらか だけ — XOR</strong><p>分岐・交差・AND・NANDを全部使う前半の山場</p></div><em>合成・20分</em></li>
-                        <li><span class="ym-pno">11</span><div><strong>はんぶん たしざん — 半加算器</strong><p>1 + 1 = 10。回路で足し算ができる最初の瞬間</p></div><em>計算・10分</em></li>
+                        <li><span class="ym-pno rs-pno-wide">13–16</span><div><strong>NOR・NAND・AND・XOR を少ないトーチで</strong><p>同じ動きを、もっと少ない部品で。本物のチップ設計でも大事な考え方</p></div><em>設計</em></li>
                     </ol>
                 </div>
 
                 <div class="ym-phase">
-                    <div class="ym-phase-head"><span>PHASE 4</span><h3>メモリ・時計・選択</h3><small>問題 12〜14 ／ 約40分</small></div>
+                    <div class="ym-phase-head"><span>PHASE 4</span><h3>計算・記憶・時計・選択</h3><small>ステップ 17〜20</small></div>
                     <ol class="ym-problems">
-                        <li><span class="ym-pno">12</span><div><strong>おぼえる — RSラッチ</strong><p>レバーを戻しても覚えている。メモリ1ビット</p></div><em>記憶・12分</em></li>
-                        <li><span class="ym-pno">13</span><div><strong>とけい — クロック</strong><p>ひとりでピカピカ。コンピュータの心臓の鼓動</p></div><em>時間・10分</em></li>
-                        <li><span class="ym-pno">14</span><div><strong>えらぶ</strong><p>信号を選んで通す、選択回路</p></div><em>選択・15分</em></li>
+                        <li><span class="ym-pno">17</span><div><strong>はんぶん たしざん — 半加算器</strong><p>1 + 1 = 10。回路で足し算ができる最初の瞬間</p></div><em>計算</em></li>
+                        <li><span class="ym-pno">18</span><div><strong>おぼえる — RSラッチ</strong><p>レバーを戻しても覚えている。メモリ1ビット</p></div><em>記憶</em></li>
+                        <li><span class="ym-pno">19</span><div><strong>とけい — クロック</strong><p>ひとりでピカピカ。コンピュータの心臓の鼓動</p></div><em>時間</em></li>
+                        <li><span class="ym-pno">20</span><div><strong>えらぶ — マルチプレクサ</strong><p>信号を選んで通す、選択回路</p></div><em>選択</em></li>
                     </ol>
                 </div>
 
                 <div class="ym-phase ym-phase--final">
-                    <div class="ym-phase-head"><span>PHASE 5</span><h3>チップをつくる</h3><small>問題 15〜16 ／ 約60分</small></div>
+                    <div class="ym-phase-head"><span>PHASE 5</span><h3>チップをつくる</h3><small>ステップ 21〜22</small></div>
                     <ol class="ym-problems">
-                        <li class="ym-peak"><span class="ym-pno">15</span><div><strong>くりあがり — 全加算器</strong><p>くりあがりを受け取って、何桁でも足せる部品へ</p></div><em>計算・25分<b class="ym-noanswer">お手本なし</b></em></li>
-                        <li class="ym-peak"><span class="ym-pno">16</span><div><strong>チップ — 2ビット加算器</strong><p>ここまでの全部を組み合わせた、自分だけの半導体チップ</p></div><em>チップ・30分<b class="ym-noanswer">お手本なし</b></em></li>
+                        <li class="ym-peak"><span class="ym-pno">21</span><div><strong>くりあがりを うけとれ — 全加算器</strong><p>くりあがりを受け取って、何桁でも足せる部品へ</p></div><em>計算</em></li>
+                        <li class="ym-peak"><span class="ym-pno">22</span><div><strong>はんどうたいチップ — 2ビット加算器</strong><p>ここまでの全部を組み合わせた、自分だけの半導体チップ</p></div><em>チップ</em></li>
                     </ol>
                 </div>
             </div>
@@ -223,7 +220,7 @@
         <!-- How the lab works -->
         <section class="ym-section ym-system">
             <div class="container">
-                <p class="ym-kicker">HOW IT WORKS</p>
+                <p class="ym-kicker">HOW IT WORKS ／ 初級の実験室</p>
                 <h2>答えの「形」は見ない。<br>回路が正しく動くかだけを見る。</h2>
                 <div class="ym-system-grid">
                     <div class="ym-system-card">
@@ -239,7 +236,7 @@
                                     <tr><td>1</td><td>1</td><td class="off">0</td></tr>
                                 </tbody>
                             </table>
-                            <small>問題10 XOR の合格条件</small>
+                            <small>ステップ12 XOR の合格条件</small>
                         </div>
                     </div>
                     <div class="ym-system-card">
@@ -252,26 +249,71 @@
                     </div>
                     <div class="ym-system-card">
                         <h3>ルールはたった6つ</h3>
-                        <p>「ダストは電気の道。15マスで消える」「トーチは付けたブロックに電気が来ると消える」——16問で使う規則はこれだけ。少ないルールの組み合わせで、複雑な回路が生まれることを体感します。</p>
+                        <p>「ダストは電気の道。15マスで消える」「トーチは付けたブロックに電気が来ると消える」——初級の22ステップで使う規則はこれだけ。少ないルールの組み合わせで、複雑な回路が生まれることを体感します。</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Roadmap -->
-        <section class="ym-section ym-roadmap" id="roadmap">
+        <!-- Curriculum: intermediate -->
+        <section class="ym-section ym-curriculum" id="js-curriculum">
             <div class="container">
-                <p class="ym-kicker">BEYOND THE LAB</p>
-                <h2>マイクラの回路は、本物の半導体につながっている。</h2>
+                <p class="ym-kicker">CURRICULUM 2 ／ 中級</p>
+                <h2>半導体とコンピュータ<br>— JavaScript で、CPU まで。</h2>
                 <p class="ym-section-lead">
-                    レッドストーンラボはゴールではなく入口です。<br>
-                    8x9東京では、マイクラの中で「回路を手で組む」から「回路をプログラムで生成する」までに取り組みます。<br>
-                    その先には、実際の半導体設計の世界が続いています。
+                    初級で手で組んだ回路を、今度は <b>hackCraft2</b> で JavaScript のプログラムから建てます。<br>
+                    本線20回で、NOT から足し算機、ALU とレジスタ、そして<b>自分で設計した CPU</b>にプログラムを読ませて動かすところまで。<br>
+                    本線の途中には、興味に合わせて深掘りできる8本の「枝」があります。
                 </p>
+
+                <div class="ym-phase">
+                    <div class="ym-phase-head"><span>PHASE 1</span><h3>プログラムで置く</h3><small>第1〜4回</small></div>
+                    <ol class="ym-problems">
+                        <li><span class="ym-pno">01</span><div><strong>半導体ってなに？</strong><p>プログラムで NOT を置いてみる</p></div><em>はじまり</em></li>
+                        <li><span class="ym-pno">04</span><div><strong>部品に名前を付ける</strong><p>関数で「セル」をつくり、何度でも置ける部品に</p></div><em>関数</em></li>
+                    </ol>
+                </div>
+
+                <div class="ym-phase">
+                    <div class="ym-phase-head"><span>PHASE 2</span><h3>ゲートから足し算機へ</h3><small>第5〜10回</small></div>
+                    <ol class="ym-problems">
+                        <li><span class="ym-pno">06</span><div><strong>XOR を組み立てる</strong><p>論理と真理値表</p></div><em>論理</em></li>
+                        <li class="ym-peak"><span class="ym-pno">09</span><div><strong>4ビット加算器</strong><p>同じ部品をならべてつなぐ</p></div><em>計算</em></li>
+                    </ol>
+                </div>
+
+                <div class="ym-phase">
+                    <div class="ym-phase-head"><span>PHASE 3</span><h3>計算して、覚える</h3><small>第11〜16回</small></div>
+                    <ol class="ym-problems">
+                        <li><span class="ym-pno">11</span><div><strong>真理値表から回路を作る</strong><p>表を書きかえるだけで、ちがう回路ができる</p></div><em>設計</em></li>
+                        <li><span class="ym-pno">12</span><div><strong>ALU</strong><p>選んで計算する。引き算は2の補数で</p></div><em>計算</em></li>
+                        <li><span class="ym-pno">14</span><div><strong>4ビットのレジスタ</strong><p>覚える部品と、1歩ずつ動かすクロック</p></div><em>記憶</em></li>
+                    </ol>
+                </div>
+
+                <div class="ym-phase ym-phase--final">
+                    <div class="ym-phase-head"><span>PHASE 4</span><h3>CPU をつくる</h3><small>第17〜20回</small></div>
+                    <ol class="ym-problems">
+                        <li><span class="ym-pno">17</span><div><strong>プログラムカウンタと命令のメモリ</strong><p>命令を順番に読み、読み解く回路</p></div><em>CPU</em></li>
+                        <li class="ym-peak"><span class="ym-pno">19</span><div><strong>CPU を組み立てる</strong><p>読む・読み解く・実行する。約1万9千ブロックの回路</p></div><em>CPU</em></li>
+                        <li class="ym-peak"><span class="ym-pno">20</span><div><strong>自分のプログラムを動かす</strong><p>自分の CPU に命令を入れて動かし、発表する</p></div><em>発表</em></li>
+                    </ol>
+                </div>
+
+                <div class="ym-phase">
+                    <div class="ym-phase-head"><span>BRANCH</span><h3>枝 — 興味に合わせて深掘り</h3><small>枝1〜8</small></div>
+                    <ol class="ym-problems">
+                        <li><span class="ym-pno rs-pno-wide">枝1・7</span><div><strong>回路を小さくする</strong><p>同じ論理を、少ないトーチで。項をまとめる</p></div><em>最適化</em></li>
+                        <li><span class="ym-pno rs-pno-wide">枝2・3</span><div><strong>配線の層と、信号の遅れ</strong><p>線をまたぐ、速くする</p></div><em>配線</em></li>
+                        <li><span class="ym-pno rs-pno-wide">枝4</span><div><strong>8ビット・16ビットにする</strong><p>手では作れない大きさへ</p></div><em>規模</em></li>
+                        <li><span class="ym-pno rs-pno-wide">枝5・6</span><div><strong>7セグ表示器</strong><p>表示器のプログラムを読み解き、自分の字を出す</p></div><em>表示</em></li>
+                        <li class="ym-peak"><span class="ym-pno rs-pno-wide">枝8</span><div><strong>論理合成</strong><p>作りたい動きを書くと、回路ができる</p></div><em>設計</em></li>
+                    </ol>
+                </div>
 
                 <figure class="ym-figure">
                     <img src="../images/yorimichi/redstone/web_matrix_wide.jpg" alt="マインクラフト内に建てられた、4つのレバー入力と8×8のランプ表示をもつ巨大なレッドストーン回路" loading="lazy" width="1196" height="673">
-                    <figcaption>プログラムで自動配置したレッドストーン回路。4つのレバーの入力に応じて、8×8のランプに絵を表示する。</figcaption>
+                    <figcaption>プログラムで自動配置したレッドストーン回路。真理値表から AND の段と OR の段を組み立て、4つのレバーの入力に応じて8×8のランプに絵を表示する。</figcaption>
                 </figure>
 
                 <figure class="ym-figure">
@@ -293,11 +335,25 @@ const or4_0 = [
 ]</code></pre>
                 </div>
 
+            </div>
+        </section>
+
+        <!-- Roadmap -->
+        <section class="ym-section ym-roadmap" id="roadmap">
+            <div class="container">
+                <p class="ym-kicker">BEYOND THE LAB</p>
+                <h2>マイクラの回路は、本物の半導体につながっている。</h2>
+                <p class="ym-section-lead">
+                    レッドストーンラボはゴールではなく入口です。<br>
+                    8x9東京では、マイクラの中で「回路を手で組む」から「回路をプログラムで生成する」までに取り組みます。<br>
+                    その先には、実際の半導体設計の世界が続いています。
+                </p>
+
                 <div class="rs-road">
                     <h3 class="rs-road-title"><span class="rs-road-tag">8x9東京で取り組むこと</span>マイクラの中で、回路を組む・つくる</h3>
                     <ol class="ym-steps rs-road-steps">
-                        <li class="is-here"><span class="ym-step-no">1</span><div><strong>マイクラで論理回路</strong><p>レッドストーンラボの16問。トーチ = トランジスタで NOT から加算器まで、手で組み上げる。</p></div></li>
-                        <li><span class="ym-step-no">2</span><div><strong>プログラムで回路を生成</strong><p>hackCraft2 で JavaScript / Python を使い、回路をコードから自動で建てる。手では置ききれない規模へ。</p></div></li>
+                        <li class="is-here"><span class="ym-step-no">1</span><div><strong>マイクラで論理回路</strong><p>初級の22ステップ。トーチ = トランジスタで NOT から加算器まで、手で組み上げる。</p></div></li>
+                        <li><span class="ym-step-no">2</span><div><strong>プログラムで回路を生成</strong><p>中級の28ステップ。hackCraft2 で JavaScript を使い、回路をコードから建てて CPU まで。手では置ききれない規模へ。</p></div></li>
                     </ol>
                 </div>
 
@@ -319,15 +375,17 @@ const or4_0 = [
                             <tr><th scope="col">マイクラで取り組むこと</th><th scope="col">本物の半導体設計では</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>トーチ1つで NOT、3つで AND<small>レッドストーンラボ 問題3・8</small></td><td>トランジスタを組み合わせて論理ゲートをつくる</td></tr>
-                            <tr><td>入力の全パターンで回路を自動検査<small>レッドストーンラボの検査ボタン</small></td><td>テストベンチ（検査用プログラム）による検証</td></tr>
-                            <tr><td>RSラッチで1ビットを覚える<small>レッドストーンラボ 問題12</small></td><td>フリップフロップ・メモリ</td></tr>
-                            <tr><td>リピーターの遅れと、ピカピカ光るクロック<small>レッドストーンラボ 問題2・13</small></td><td>信号が伝わる遅れ（伝搬遅延）と、クロックにあわせて動く回路</td></tr>
-                            <tr><td>全加算器を組み合わせて2ビット加算器に<small>レッドストーンラボ 問題15・16</small></td><td>小さな部品を組み合わせて大きな回路にする階層設計</td></tr>
-                            <tr><td>回路の部品をコードで定義し、プログラムで建てる<small>hackCraft2</small></td><td>Chisel や Amaranth（Python）のように、プログラムで回路を生成する設計言語</td></tr>
+                            <tr><td>トーチ1つで NOT、3つで AND<small>初級 ステップ3・10</small></td><td>トランジスタを組み合わせて論理ゲートをつくる</td></tr>
+                            <tr><td>入力の全パターンで回路を自動検査<small>初級の検査ボタン</small></td><td>テストベンチ（検査用プログラム）による検証</td></tr>
+                            <tr><td>RSラッチで1ビットを覚え、レジスタにする<small>初級 ステップ18 ／ 中級 第14回</small></td><td>フリップフロップ・メモリ</td></tr>
+                            <tr><td>リピーターの遅れと、ピカピカ光るクロック<small>初級 ステップ2・19 ／ 中級 枝3</small></td><td>信号が伝わる遅れ（伝搬遅延）と、クロックにあわせて動く回路</td></tr>
+                            <tr><td>全加算器を組み合わせて2ビット・4ビット加算器に<small>初級 ステップ21・22 ／ 中級 第9回</small></td><td>小さな部品を組み合わせて大きな回路にする階層設計</td></tr>
+                            <tr><td>回路の部品をコードで定義し、プログラムで建てる<small>中級 第4回</small></td><td>Chisel や Amaranth（Python）のように、プログラムで回路を生成する設計言語</td></tr>
+                            <tr><td>作りたい動きを書くと、回路ができる<small>中級 第11回・枝8</small></td><td>論理合成（ツールが動きの記述から論理回路をつくる）</td></tr>
+                            <tr><td>プログラムカウンタ・デコーダ・ALUをつないで CPU に<small>中級 第17〜19回</small></td><td>CPU の設計（命令を読む・読み解く・実行するしくみ）</td></tr>
                         </tbody>
                     </table>
-                    <p class="rs-bridge-gap"><b>まだ大きな一歩が残っているところ</b>本物の設計では、部品の位置を自分で決めるのではなく「どんな動きをする回路か」を書き、配置や配線は設計ツールが自動で行います。マイクラ特有のしくみ（ゲーム内の時間の単位など）も持ち越せません。この「動きを書いて、形はツールにまかせる」への切り替えが、マイクラの次に越える壁です。</p>
+                    <p class="rs-bridge-gap"><b>まだ大きな一歩が残っているところ</b>中級の枝8では「動きを書くと回路ができる」論理合成を体験しますが、本物の設計では、そこから先の部品の配置や配線まで設計ツールが自動で行います。マイクラ特有のしくみ（ゲーム内の時間の単位など）も持ち越せません。この「動きを書いて、形はすべてツールにまかせる」への切り替えが、マイクラの次に越える壁です。</p>
                 </div>
             </div>
         </section>
@@ -340,11 +398,11 @@ const or4_0 = [
                 <div class="ym-qa">
                     <div class="ym-qa-item">
                         <h3>半導体なんて、子どもには難しくないですか？</h3>
-                        <p>問題文はひらがな中心で、「レバーを いれたら ランプを けせ」のように短く書かれています。専門用語はあとから「これが NOT という名前」と教えるので、仕組みを先に体で覚え、言葉はあとからついてきます。</p>
+                        <p>初級の問題文はひらがな中心で、「レバーを いれたら ランプを けせ」のように短く書かれています。専門用語はあとから「これが NOT という名前」と教えるので、仕組みを先に体で覚え、言葉はあとからついてきます。</p>
                     </div>
                     <div class="ym-qa-item">
                         <h3>何が身につきますか？</h3>
-                        <p>コンピュータが動く原理（論理回路・2進数・メモリ・クロック）の理解に加え、「なぜ動かないのか」を自分で切り分けるデバッグの力。検査で落ちた理由を、正解と実際の値から考える習慣が育ちます。</p>
+                        <p>コンピュータが動く原理（論理回路・2進数・メモリ・クロック）の理解に加え、「なぜ動かないのか」を自分で切り分けるデバッグの力。中級では、CPU が命令を読んで実行するしくみまで理解します。検査で落ちた理由を、正解と実際の値から考える習慣が育ちます。</p>
                     </div>
                     <div class="ym-qa-item">
                         <h3>どのコースで受けられますか？</h3>
