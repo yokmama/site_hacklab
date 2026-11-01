@@ -1,0 +1,73 @@
+/*
+ * プログラミングコースのカリキュラム紹介（docs/programming/*.html）
+ *
+ * ページの部品は yorimichi.css を流用する。ここではテーマ色と、このページ群だけの調整を書く。
+ * <body class="page-yorimichi page-programming theme-◯◯">
+ */
+.theme-cs {
+  --ym-bg: #fffaf4;
+  --ym-bg-2: #fdf2e6;
+  --ym-line: #f3dfc8;
+  --ym-accent: #b85e00;
+  --ym-accent-glow: #ffa64d;
+  --ym-accent-soft: #fde9d3;
+  --ym-chip: #fff5ea;
+  --ym-shadow: rgba(120, 70, 10, 0.07);
+}
+
+.theme-data-science {
+  --ym-bg: #f5fbfa;
+  --ym-bg-2: #e9f6f3;
+  --ym-line: #cfe8e3;
+  --ym-accent: #0b7a6c;
+  --ym-accent-glow: #3fd1bd;
+  --ym-accent-soft: #dcf3ee;
+  --ym-chip: #eef8f6;
+  --ym-shadow: rgba(10, 80, 70, 0.07);
+}
+
+.theme-kyopro {
+  --ym-bg: #f7f8fd;
+  --ym-bg-2: #eceffa;
+  --ym-line: #d9def3;
+  --ym-accent: #3949ab;
+  --ym-accent-glow: #7f8cff;
+  --ym-accent-soft: #e3e7fb;
+  --ym-chip: #f1f3fc;
+  --ym-shadow: rgba(30, 40, 110, 0.07);
+}
+
+.theme-mod {
+  --ym-bg: #f7fbf4;
+  --ym-bg-2: #edf6e6;
+  --ym-line: #d8eacb;
+  --ym-accent: #3f8a12;
+  --ym-accent-glow: #8fe05a;
+  --ym-accent-soft: #e6f4da;
+  --ym-chip: #f1f8eb;
+  --ym-shadow: rgba(40, 90, 20, 0.07);
+}
+
+/* 背景画像なしのヒーロー */
+.page-programming .ym-hero {
+  min-height: 0;
+  padding: 150px 0 88px;
+  background-image:
+    linear-gradient(var(--ym-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--ym-line) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* 範囲や2つ分の番号（02・04、17・18 など） */
+.ym-pno.ym-pno-wide {
+  width: auto;
+  min-width: 2ch;
+  font-size: 1.05rem;
+  white-space: nowrap;
+}
+
+/* ほかの道のカードは ym-section の中で中央にそろえる */
+.page-programming .prog-tracks {
+  max-width: 880px;
+  margin: 0 auto;
+}
