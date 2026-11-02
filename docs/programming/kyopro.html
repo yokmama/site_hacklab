@@ -18,9 +18,9 @@
     <link rel="icon" href="../images/89logo.png" type="image/png">
     <link rel="apple-touch-icon" href="../images/89logo.png">
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="../css/style.css?v=20261102">
-    <link rel="stylesheet" href="../css/yorimichi.css?v=20261102">
-    <link rel="stylesheet" href="../css/programming.css?v=20261102">
+    <link rel="stylesheet" href="../css/style.css?v=20261103">
+    <link rel="stylesheet" href="../css/yorimichi.css?v=20261103">
+    <link rel="stylesheet" href="../css/programming.css?v=20261103">
 </head>
 <body class="page-yorimichi page-programming theme-kyopro">
 
@@ -95,6 +95,50 @@
             </div>
         </section>
 
+        <!-- 実際の教材から -->
+        <section class="ym-section prog-showcase-section">
+            <div class="container">
+                <p class="ym-kicker">FROM THE TEXTBOOK</p>
+                <h2>実際の教材から</h2>
+                <p class="ym-section-lead">問題はすべてオリジナル。入力を受け取って答えを出力する、コンテストと同じ形で解きます。</p>
+                <div class="prog-showcase">
+                    <div class="prog-showcase-media">
+                        <figure class="prog-shot">
+                            <img src="../images/programming/kyopro/merge_sort.jpg" alt="数列 [3,1,4,1,5,9] を半分ずつに分け、マージしながら [1,1,3,4,5,9] に並べていく図" loading="lazy" width="675" height="766">
+                            <figcaption>教材の図。分けて、並べて、合わせる流れを目で追えます。</figcaption>
+                        </figure>
+                    </div>
+                    <div class="prog-showcase-text">
+                        <span class="prog-showcase-tag">競技プログラミング　ステップ22「大きな問題を小さく分ける（分割統治）」</span>
+                        <h3>大きな問題を、小さく分けて解く</h3>
+                        <p>数列の最大値を、左半分と右半分に分けて求めます。「分けて、解いて、合わせる」分割統治は、マージソートをはじめ多くのアルゴリズムの土台になる考え方です。</p>
+                        <div class="ym-code prog-editor">
+                            <div class="ym-code-head"><span class="prog-editor-dots" aria-hidden="true"><i></i><i></i><i></i></span>main.py</div>
+<pre><code><span class="k">def</span> find_max(numbers, left, right):
+    <span class="c"># ベースケース: 要素が1個</span>
+    <span class="k">if</span> left == right:
+        <span class="k">return</span> numbers[left]
+
+    <span class="c"># 分ける</span>
+    mid = (left + right) // 2
+    left_max = find_max(numbers, left, mid)
+    right_max = find_max(numbers, mid + 1, right)
+
+    <span class="c"># 合わせる</span>
+    <span class="k">if</span> left_max &gt; right_max:
+        <span class="k">return</span> left_max
+    <span class="k">else</span>:
+        <span class="k">return</span> right_max
+
+n = int(input())
+a = list(map(int, input().split()))
+print(find_max(a, 0, n - 1))</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="ym-section ym-curriculum" id="curriculum">
             <div class="container">
                 <p class="ym-kicker">CURRICULUM ／ Python</p>
@@ -151,6 +195,37 @@
                         <li><span class="ym-pno">30</span><div><strong>2つの言葉のにているところ</strong><p>文字列の DP</p></div><em>DP</em></li>
                         <li class="ym-peak"><span class="ym-pno">31</span><div><strong>おぼえる作戦チャレンジ</strong><p>DP の総合演習</p></div><em>総合</em></li>
                     </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- この力が使われている場所 -->
+        <section class="ym-section prog-uses-section">
+            <div class="container">
+                <p class="ym-kicker">IN THE REAL WORLD</p>
+                <h2>この力が、使われている場所</h2>
+                <p class="ym-section-lead">「速く、正しく解く」ためのアルゴリズムは、毎日使うサービスの裏側で動いています。</p>
+                <div class="prog-uses">
+                    <div class="prog-use">
+                        <span class="prog-use-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></span>
+                        <h3>カーナビや乗換案内</h3>
+                        <p>たくさんの駅や道の中から、最短の経路を一瞬で探すのはアルゴリズムの力です。</p>
+                    </div>
+                    <div class="prog-use">
+                        <span class="prog-use-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+                        <h3>検索エンジン</h3>
+                        <p>膨大なデータの中から速く探し、並べ替える。探索やソートがその土台です。</p>
+                    </div>
+                    <div class="prog-use">
+                        <span class="prog-use-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
+                        <h3>IT企業の採用試験</h3>
+                        <p>エンジニアの採用では、アルゴリズムの問題を解くコーディング試験がよく行われています。</p>
+                    </div>
+                    <div class="prog-use">
+                        <span class="prog-use-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></span>
+                        <h3>プログラミングコンテスト</h3>
+                        <p>AtCoder では定期的にコンテストが開かれ、中高生向けには情報オリンピックもあります。</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -225,6 +300,6 @@
         </div>
     </footer>
 
-    <script src="../js/script.js?v=20261102"></script>
+    <script src="../js/script.js?v=20261103"></script>
 </body>
 </html>
