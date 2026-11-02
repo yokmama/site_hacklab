@@ -1335,3 +1335,21 @@ a.yorimichi-card:hover {
 .prog-track--data-science { --prog-accent: #0b7a6c; }
 .prog-track--kyopro { --prog-accent: #3949ab; }
 .prog-track--mod { --prog-accent: #3f8a12; }
+
+/* マイクラAIコース: 各章の内容（1つの折りたたみにまとめた一覧） */
+.chapter-list {
+    margin: 0;
+}
+
+.chapter-list dt {
+    font-weight: 700;
+    margin-top: 14px;
+}
+
+.chapter-list dt:first-child {
+    margin-top: 0;
+}
+
+.chapter-list dd {
+    margin: 4px 0 0;
+}
