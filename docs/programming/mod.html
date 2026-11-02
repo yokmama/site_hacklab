@@ -18,9 +18,9 @@
     <link rel="icon" href="../images/89logo.png" type="image/png">
     <link rel="apple-touch-icon" href="../images/89logo.png">
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="../css/style.css?v=20261102">
-    <link rel="stylesheet" href="../css/yorimichi.css?v=20261102">
-    <link rel="stylesheet" href="../css/programming.css?v=20261102">
+    <link rel="stylesheet" href="../css/style.css?v=20261103">
+    <link rel="stylesheet" href="../css/yorimichi.css?v=20261103">
+    <link rel="stylesheet" href="../css/programming.css?v=20261103">
 </head>
 <body class="page-yorimichi page-programming theme-mod">
 
@@ -95,6 +95,53 @@
             </div>
         </section>
 
+        <!-- 実際の教材から -->
+        <section class="ym-section prog-showcase-section">
+            <div class="container">
+                <p class="ym-kicker">FROM THE TEXTBOOK</p>
+                <h2>実際の教材から</h2>
+                <p class="ym-section-lead">WorldCraft AI では、短いスクリプトでマイクラの中に NPC やミニゲームをつくります。</p>
+                <div class="prog-showcase">
+                    <div class="prog-showcase-media">
+                        <figure class="prog-shot prog-shot--pair">
+                            <img src="../images/programming/mod/npc.jpg" alt="マインクラフトの村に立つ、名札のついたNPC" loading="lazy" width="633" height="900">
+                            <img src="../images/programming/mod/npc_dialog.jpg" alt="マインクラフトのチャット画面。NPCが「エンチャント屋へようこそ！」と話しかけ、シャープネスなどの選択肢が並んでいる" loading="lazy" width="780" height="436">
+                            <figcaption>つくった NPC に話しかけると、チャットに選択肢が出ます。</figcaption>
+                        </figure>
+                    </div>
+                    <div class="prog-showcase-text">
+                        <span class="prog-showcase-tag">WorldCraft AI　NPC編「エンチャント屋さんを作ろう」</span>
+                        <h3>話しかけると、選択肢で応える NPC</h3>
+                        <p>プレイヤーに話しかけられたら、あいさつをして選択肢を出し、選ばれた魔法を武器につける。短いスクリプトで、ゲームの中に自分のお店ができます。選択肢は自由に増やせます。</p>
+                        <div class="ym-code prog-editor">
+                            <div class="ym-code-head"><span class="prog-editor-dots" aria-hidden="true"><i></i><i></i><i></i></span>enchant_shop.kts</div>
+<pre><code><span class="k">scenario</span> {
+    name = <span class="s">"エンチャント屋"</span>
+
+    <span class="k">onInteract</span> { npc, player -&gt;
+        npc.say(<span class="s">"エンチャント屋へようこそ！"</span>, player)
+
+        choiceAction(
+            <span class="s">"シャープネス"</span> <span class="k">to</span> {
+                runCommand(<span class="s">"enchant ${player.name} sharpness 3"</span>)
+                npc.say(<span class="s">"&lt;green&gt;シャープネスをつけたよ！&lt;/green&gt;"</span>, player)
+            },
+            <span class="s">"ファイアアスペクト"</span> <span class="k">to</span> {
+                runCommand(<span class="s">"enchant ${player.name} fire_aspect 2"</span>)
+                npc.say(<span class="s">"&lt;red&gt;ファイアアスペクトをつけたよ！&lt;/red&gt;"</span>, player)
+            },
+            <span class="s">"やめる"</span> <span class="k">to</span> {
+                npc.say(<span class="s">"またね！"</span>, player)
+            }
+        )
+    }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="ym-section ym-curriculum" id="worldcraft">
             <div class="container">
                 <p class="ym-kicker">CURRICULUM 1 ／ WorldCraft AI</p>
@@ -159,6 +206,37 @@
                         <li><span class="ym-pno">13</span><div><strong>応用と公開</strong><p>完成した Mod を世界に公開する流れを知る</p></div><em>公開</em></li>
                         <li class="ym-peak"><span class="ym-pno">14</span><div><strong>実践：イベントドリブンMod入門</strong><p>ゲームの出来事に反応して動く Mod をつくる</p></div><em>イベント</em></li>
                     </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- この力が使われている場所 -->
+        <section class="ym-section prog-uses-section">
+            <div class="container">
+                <p class="ym-kicker">IN THE REAL WORLD</p>
+                <h2>この力が、使われている場所</h2>
+                <p class="ym-section-lead">ゲームの中に「しかけ」をつくる力は、ゲームの外でも生きています。</p>
+                <div class="prog-uses">
+                    <div class="prog-use">
+                        <span class="prog-use-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+                        <h3>世界中のマイクラ Mod</h3>
+                        <p>世界中の開発者が Mod を公開し、たくさんの人がそれを入れて遊んでいます。</p>
+                    </div>
+                    <div class="prog-use">
+                        <span class="prog-use-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                        <h3>マルチプレイのサーバー</h3>
+                        <p>ミニゲームやイベントで人が集まるサーバーも、プログラムでしかけがつくられています。</p>
+                    </div>
+                    <div class="prog-use">
+                        <span class="prog-use-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg></span>
+                        <h3>ゲーム開発の現場</h3>
+                        <p>NPC の会話やクエスト、ゲームの状態管理は、プロのゲーム開発と同じ考え方です。</p>
+                    </div>
+                    <div class="prog-use">
+                        <span class="prog-use-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
+                        <h3>Android アプリ</h3>
+                        <p>Kotlin は、Google が Android アプリ開発で推奨している言語です。</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -229,6 +307,6 @@
         </div>
     </footer>
 
-    <script src="../js/script.js?v=20261102"></script>
+    <script src="../js/script.js?v=20261103"></script>
 </body>
 </html>

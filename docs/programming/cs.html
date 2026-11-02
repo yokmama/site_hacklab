@@ -18,9 +18,9 @@
     <link rel="icon" href="../images/89logo.png" type="image/png">
     <link rel="apple-touch-icon" href="../images/89logo.png">
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="../css/style.css?v=20261102">
-    <link rel="stylesheet" href="../css/yorimichi.css?v=20261102">
-    <link rel="stylesheet" href="../css/programming.css?v=20261102">
+    <link rel="stylesheet" href="../css/style.css?v=20261103">
+    <link rel="stylesheet" href="../css/yorimichi.css?v=20261103">
+    <link rel="stylesheet" href="../css/programming.css?v=20261103">
 </head>
 <body class="page-yorimichi page-programming theme-cs">
 
@@ -90,6 +90,60 @@
                         <span class="ym-pillar-no">03</span>
                         <h3>アルゴリズムまで届く</h3>
                         <p>探索・ソート・再帰・グラフ探索、通信と暗号、エージェント。大学で学ぶような内容にも、手を動かしながらふれます。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 実際の教材から -->
+        <section class="ym-section prog-showcase-section">
+            <div class="container">
+                <p class="ym-kicker">FROM THE TEXTBOOK</p>
+                <h2>実際の教材から</h2>
+                <p class="ym-section-lead">ペットマスターでは Scratch のブロックで、真のマスターでは JavaScript で、マイクラの中のペットを動かします。</p>
+                <div class="prog-showcase">
+                    <div class="prog-showcase-media">
+                        <figure class="prog-shot">
+                            <img src="../images/programming/cs/scratch_maze.jpg" alt="Scratchのブロックで書いたプログラム。30回くりかえす中で、前にブロックがあれば右を向き、なければ前に進む" loading="lazy" width="826" height="817">
+                            <figcaption>hackCraft2 の Scratch ブロック。緑のブロックがペットへの命令です。</figcaption>
+                        </figure>
+                    </div>
+                    <div class="prog-showcase-text">
+                        <span class="prog-showcase-tag">ペットマスター　ステップ6「迷路チャレンジ」</span>
+                        <h3>ブロックで、迷路を進むアルゴリズム</h3>
+                        <p>「前にブロックがあれば右を向く。なければ前に進む」。くりかえしと条件分岐を組み合わせるだけで、ペットが自分で迷路を進みはじめます。うまく抜けられない迷路があれば、なぜかを考えて直します。</p>
+                    </div>
+                </div>
+                <div class="prog-showcase prog-showcase--rev">
+                    <div class="prog-showcase-media">
+                        <figure class="prog-shot">
+                            <img src="../images/programming/cs/js_fractal_tree.jpg" alt="マインクラフトの空中に、幹が左右に枝分かれしてできたブロックの木" loading="lazy" width="900" height="751">
+                            <figcaption>プログラムを実行すると、マイクラの中に枝分かれする木が建ちます。</figcaption>
+                        </figure>
+                    </div>
+                    <div class="prog-showcase-text">
+                        <span class="prog-showcase-tag">真のマスター　ステップ12「再帰関数」</span>
+                        <h3>自分で自分を呼ぶ関数で、木を建てる</h3>
+                        <p>幹を建てたら、左右の枝として自分自身をもう一度呼び出す。十数行のコードが、マイクラの中で枝分かれする木になります。</p>
+                        <div class="ym-code prog-editor">
+                            <div class="ym-code-head"><span class="prog-editor-dots" aria-hidden="true"><i></i><i></i><i></i></span>tree.js</div>
+<pre><code><span class="k">function</span> drawTree(x, y, z, depth, height) {
+  <span class="k">if</span> (depth &lt;= 0) {
+    entity.setBlock(x, y, z, <span class="s">"absolute"</span>, <span class="s">"oak_leaves"</span>)  <span class="c">// 葉っぱ</span>
+    <span class="k">return</span>
+  }
+
+  <span class="c">// 幹を描く</span>
+  <span class="k">for</span> (<span class="k">let</span> i = 0; i &lt; height; i = i + 1) {
+    entity.setBlock(x, y + i, z, <span class="s">"absolute"</span>, <span class="s">"oak_log"</span>)
+  }
+
+  <span class="c">// 左の枝（再帰！）</span>
+  drawTree(x - depth, y + height, z, depth - 1, height - 1)
+  <span class="c">// 右の枝（再帰！）</span>
+  drawTree(x + depth, y + height, z, depth - 1, height - 1)
+}</code></pre>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -208,6 +262,37 @@
             </div>
         </section>
 
+        <!-- この力が使われている場所 -->
+        <section class="ym-section prog-uses-section">
+            <div class="container">
+                <p class="ym-kicker">IN THE REAL WORLD</p>
+                <h2>この考え方が、使われている場所</h2>
+                <p class="ym-section-lead">カリキュラムで学ぶ考え方は、身の回りのあちこちで動いています。</p>
+                <div class="prog-uses">
+                    <div class="prog-use">
+                        <span class="prog-use-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></span>
+                        <h3>地図アプリの道案内</h3>
+                        <p>「どの道を通れば一番近い？」を探すのは、迷路探索で学ぶグラフ探索（DFS / BFS）の考え方です。</p>
+                    </div>
+                    <div class="prog-use">
+                        <span class="prog-use-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+                        <h3>ネットのお買い物やメッセージ</h3>
+                        <p>やりとりする内容は、暗号で守られています。シーザー暗号は、そのしくみへの入口です。</p>
+                    </div>
+                    <div class="prog-use">
+                        <span class="prog-use-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg></span>
+                        <h3>ゲームの敵キャラクター</h3>
+                        <p>巡回する・追いかける・逃げる。状態を切り替えて動く「状態マシン」は、エージェントのステップで実際につくります。</p>
+                    </div>
+                    <div class="prog-use">
+                        <span class="prog-use-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg></span>
+                        <h3>家電やロボット</h3>
+                        <p>センサーでまわりを調べて、動きを変える。ペットに「目」を与えて条件分岐させるのと同じしくみです。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="ym-section">
             <div class="container">
                 <p class="ym-kicker">OTHER TRACKS</p>
@@ -278,6 +363,6 @@
         </div>
     </footer>
 
-    <script src="../js/script.js?v=20261102"></script>
+    <script src="../js/script.js?v=20261103"></script>
 </body>
 </html>

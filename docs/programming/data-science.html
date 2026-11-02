@@ -18,9 +18,9 @@
     <link rel="icon" href="../images/89logo.png" type="image/png">
     <link rel="apple-touch-icon" href="../images/89logo.png">
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="../css/style.css?v=20261102">
-    <link rel="stylesheet" href="../css/yorimichi.css?v=20261102">
-    <link rel="stylesheet" href="../css/programming.css?v=20261102">
+    <link rel="stylesheet" href="../css/style.css?v=20261103">
+    <link rel="stylesheet" href="../css/yorimichi.css?v=20261103">
+    <link rel="stylesheet" href="../css/programming.css?v=20261103">
 </head>
 <body class="page-yorimichi page-programming theme-data-science">
 
@@ -95,6 +95,49 @@
             </div>
         </section>
 
+        <!-- 実際の教材から -->
+        <section class="ym-section prog-showcase-section">
+            <div class="container">
+                <p class="ym-kicker">FROM THE TEXTBOOK</p>
+                <h2>実際の教材から</h2>
+                <p class="ym-section-lead">Google Colab で Python を書き、マイクラの世界からデータを集めて分析します。</p>
+                <div class="prog-showcase">
+                    <div class="prog-showcase-media">
+                        <div class="ym-code prog-editor">
+                            <div class="ym-code-head"><span class="prog-editor-dots" aria-hidden="true"><i></i><i></i><i></i></span>analysis.py</div>
+<pre><code><span class="k">def</span> survey_area(size=7):
+    blocks = []
+    <span class="k">for</span> x <span class="k">in</span> range(-size // 2, size // 2 + 1):
+        <span class="k">for</span> z <span class="k">in</span> range(-size // 2, size // 2 + 1):
+            loc = LocationFactory.local(x, -1, z)
+            block = entity.inspect_at(loc)
+            blocks.append(block.name)
+    <span class="k">return</span> Counter(blocks)
+
+counts_a = survey_area(7)
+entity.forward(30)
+counts_b = survey_area(7)
+
+fig, axes = plt.subplots(1, 2, figsize=(14, 5))
+
+ranking_a = counts_a.most_common(5)
+axes[0].bar([r[0] <span class="k">for</span> r <span class="k">in</span> ranking_a], [r[1] <span class="k">for</span> r <span class="k">in</span> ranking_a])
+axes[0].set_title(<span class="s">"Area A"</span>)
+
+ranking_b = counts_b.most_common(5)
+axes[1].bar([r[0] <span class="k">for</span> r <span class="k">in</span> ranking_b], [r[1] <span class="k">for</span> r <span class="k">in</span> ranking_b])
+axes[1].set_title(<span class="s">"Area B"</span>)</code></pre>
+                        </div>
+                    </div>
+                    <div class="prog-showcase-text">
+                        <span class="prog-showcase-tag">データサイエンティスト　ステップ7「はじめてのデータ分析」</span>
+                        <h3>2つの場所を調べて、グラフで比べる</h3>
+                        <p>ペットの足もとのブロックを 7×7 マス調べて数え、30 ブロック先でも同じように調べます。多かったブロックの上位5つを棒グラフにして、2つの場所のちがいを読み取ります。<br>集めるのも、数えるのも、グラフにするのも、すべて自分のコードです。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="ym-section ym-curriculum" id="curriculum">
             <div class="container">
                 <p class="ym-kicker">CURRICULUM ／ Python</p>
@@ -147,6 +190,37 @@
                         <li><span class="ym-pno">19</span><div><strong>AIペットを作ろう</strong><p>LLM の API を使って、ペットに AI の頭脳を載せる</p></div><em>AI</em></li>
                         <li class="ym-peak"><span class="ym-pno">20</span><div><strong>総合プロジェクト + 発表</strong><p>学んだ技術を組み合わせ、自由テーマで完成・発表</p></div><em>総合</em></li>
                     </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- この力が使われている場所 -->
+        <section class="ym-section prog-uses-section">
+            <div class="container">
+                <p class="ym-kicker">IN THE REAL WORLD</p>
+                <h2>この力が、使われている場所</h2>
+                <p class="ym-section-lead">データを集めて、数えて、比べて、結論を出す。その流れは、さまざまな仕事で使われています。</p>
+                <div class="prog-uses">
+                    <div class="prog-use">
+                        <span class="prog-use-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="16" y1="13" x2="16" y2="21"/><line x1="8" y1="13" x2="8" y2="21"/><line x1="12" y1="15" x2="12" y2="23"/><path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"/></svg></span>
+                        <h3>天気予報</h3>
+                        <p>各地で観測したデータを集めて分析し、明日の天気を予測しています。</p>
+                    </div>
+                    <div class="prog-use">
+                        <span class="prog-use-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+                        <h3>スポーツの分析</h3>
+                        <p>選手の動きや試合の記録を数字で見て、作戦や練習に生かしています。</p>
+                    </div>
+                    <div class="prog-use">
+                        <span class="prog-use-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
+                        <h3>通販や動画サイトの「おすすめ」</h3>
+                        <p>見たもの・買ったもののデータから、好きそうなものを予測して表示しています。</p>
+                    </div>
+                    <div class="prog-use">
+                        <span class="prog-use-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></span>
+                        <h3>科学の研究や実験</h3>
+                        <p>実験の結果を記録し、グラフで比べて結論を出す。農場実験レポートと同じ流れです。</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -221,6 +295,6 @@
         </div>
     </footer>
 
-    <script src="../js/script.js?v=20261102"></script>
+    <script src="../js/script.js?v=20261103"></script>
 </body>
 </html>
