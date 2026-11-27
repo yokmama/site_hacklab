@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://school.0x48lab.com/sitemap.xml
